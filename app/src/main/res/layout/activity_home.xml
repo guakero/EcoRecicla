@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:background="@color/verdeFondo"
+    android:backgroundTint="@color/verdeFondo">
+
+    <ImageView
+        android:layout_width="137dp"
+        android:layout_height="205dp"
+        android:src="@drawable/eco_recicla"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="93dp"
+        />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="Categorias"
+        android:textColor="@color/verde"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:backgroundTint="#A4F5AA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="340dp"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/verde"
+        />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="Registro"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="textEnd"
+        android:backgroundTint="@color/verde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="410dp"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/verde"/>
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="Estadisticas"
+        android:textColor="@color/verde"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:backgroundTint="#A4F5AA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="480dp"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/verde"
+        />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="Consejos"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="textEnd"
+        android:backgroundTint="@color/verde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="560dp"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/verde"/>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/categories"
+        android:layout_marginTop="347dp"
+        android:background="#A4F5AA"
+        android:layout_marginLeft="240dp"/>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/register"
+        android:layout_marginTop="417dp"
+        android:background="@color/verde"
+        android:layout_marginRight="240dp"/>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/stats"
+        android:layout_marginTop="487dp"
+        android:background="#A4F5AA"
+        android:layout_marginLeft="240dp"/>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/tips"
+        android:layout_marginTop="567dp"
+        android:background="@color/verde"
+        android:layout_marginRight="240dp"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/round_arrow_left_bold__1_"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="12dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

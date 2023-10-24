@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Welcome"
+    android:background="@color/verdeFondo"
+    android:backgroundTint="@color/verdeFondo">
+
+
+    <ImageView
+        android:layout_width="137dp"
+        android:layout_height="205dp"
+        android:src="@drawable/eco_recicla"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="93dp"
+        />
+    
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="28dp"
+        android:textColor="@color/verde"
+        android:text="Bienvenido"
+        android:textStyle="bold"
+        android:textSize="22dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="337dp"
+        />
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="35dp"
+        android:textColor="#A6002107"
+        android:text="Somos el software de gestión de reciclaje más importante y eficiente del país. "
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="375dp"/>
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="Registrarse"
+        android:textColor="@color/verde"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:backgroundTint="#A4F5AA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="442dp"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/verde"/>
+
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="35dp"
+        android:textColor="#A6002107"
+        android:text="¿Ya eres uno de los nuestros?"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="520dp"/>
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="Iniciar Sesion"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:backgroundTint="@color/verde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="553dp"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/verde"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
