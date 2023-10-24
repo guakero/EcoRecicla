@@ -13,19 +13,7 @@
         android:theme="@style/Theme.EcoRecicla"
         tools:targetApi="31">
         <activity
-            android:name=".Home"
-            android:exported="false" />
-        <activity
-            android:name=".RegistroCompletado"
-            android:exported="false" />
-        <activity
-            android:name=".CreateAccount"
-            android:exported="false" />
-        <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".Welcome"
+            android:name=".Categorias"
             android:exported="false" />
         <activity
             android:name=".RegistroDeReciclaje"
