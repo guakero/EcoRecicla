@@ -52,6 +52,7 @@
                 android:background="@color/white">
 
                 <ImageButton
+                    android:id="@+id/btnPapel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -313,5 +314,16 @@
 
         </LinearLayout>
     </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="71dp"
+        android:layout_height="52dp"
+        android:background="@color/verdeFondo"
+        android:src="@drawable/baseline_arrow_circle_left_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/verdeFuentes"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
