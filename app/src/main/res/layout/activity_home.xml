@@ -19,6 +19,7 @@
         />
 
     <Button
+        android:id="@+id/btnCategorias"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="Categorias"
@@ -53,6 +54,7 @@
         app:strokeColor="@color/verde"/>
 
     <Button
+        android:id="@+id/btnEstadisticas"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="Estadisticas"
@@ -70,6 +72,7 @@
         />
 
     <Button
+        android:id="@+id/btnConsejos"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="Consejos"
@@ -128,16 +131,6 @@
         android:layout_marginTop="567dp"
         android:background="@color/verde"
         android:layout_marginRight="240dp"/>
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/round_arrow_left_bold__1_"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="25dp"
-        android:layout_marginLeft="12dp"/>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

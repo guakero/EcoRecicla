@@ -80,6 +80,7 @@
         android:textSize="16dp"/>
 
     <Button
+        android:id="@+id/btnCreateAccount"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="Registrarse"
@@ -94,14 +95,5 @@
         android:layout_marginTop="563dp"
         style="?attr/materialButtonOutlinedStyle"
         app:strokeColor="@color/verde"/>
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/round_arrow_left_bold__1_"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="25dp"
-        android:layout_marginLeft="12dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

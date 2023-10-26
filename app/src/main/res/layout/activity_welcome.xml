@@ -47,6 +47,7 @@
         android:layout_marginTop="375dp"/>
 
     <Button
+        android:id="@+id/registrarseBtn"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="Registrarse"
@@ -77,6 +78,7 @@
         android:layout_marginTop="520dp"/>
 
     <Button
+        android:id="@+id/iniciarSesionBtn"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="Iniciar Sesion"

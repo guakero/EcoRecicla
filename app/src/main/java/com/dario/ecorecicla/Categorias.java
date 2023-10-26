@@ -15,13 +15,8 @@ public class Categorias extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
         ImageButton papel = findViewById(R.id.btnPapel);
-        ImageButton Home = findViewById(R.id.btnHome);
-        Home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Categorias.this, com.dario.ecorecicla.Home.class));
-            }
-        });
+
+
         papel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
