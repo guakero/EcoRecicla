@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Estadistica_equiposelectronicos_baterias">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="209dp"
+        android:layout_height="57dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/verdeFondo"
+        android:text="Cantidad mínima reciclada: Kg/mes. Cantidad maxima reciclada: Kg/mes. Cantidad promedio reciclada: Kg/mes."
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toEndOf="@+id/EstEqElecBat"
+        tools:layout_editor_absoluteY="557dp" />
+
+    <ImageButton
+        android:id="@+id/estEqElecBat"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:background="@color/white"
+        app:srcCompat="@drawable/battery_full_fill0_wght400_grad0_opsz24"
+        app:tint="@color/black"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="556dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/white"
+        android:text="Grafico Baterias"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="535dp" />
+
+    <ImageView
+        android:layout_width="137dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/eco_recicla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="387dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="252dp"
+        android:text="ESTADISTICA MENSUAL DE EQUIPOS ELECTRONICOS Y BATERIAS"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="205dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="317dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Mes"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/horasDiariasTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="Enero"
+            android:textSize="12sp" />
+
+        <SeekBar
+            android:id="@+id/mes_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:max="12"
+            android:paddingTop="12dp"
+            android:progress="0" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="209dp"
+        android:layout_height="57dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/verdeFondo"
+        android:text="Cantidad mínima reciclada: Kg/mes. Cantidad maxima reciclada: Kg/mes. Cantidad promedio reciclada: Kg/mes."
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/EstEqElecBat"
+        tools:layout_editor_absoluteY="454dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/white"
+        android:text="Grafico Electronicos"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="432dp" />
+
+    <ImageButton
+        android:id="@+id/EstEqElecBat"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:background="@color/white"
+        app:srcCompat="@drawable/Equipos_Electronicos"
+        app:tint="@color/black"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="453dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
