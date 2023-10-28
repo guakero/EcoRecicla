@@ -9,11 +9,13 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:id="@+id/imgIcono2"
+        android:layout_width="119dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/eco_recicla_icono_temp"
         android:layout_gravity="center"
-        tools:srcCompat="@drawable/eco_recicla_icono_temp" />
+        />
     <TextView
         android:id="@+id/titulos1"
         android:layout_width="wrap_content"
@@ -38,33 +40,50 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="5dp"
+
                 >
-                <ImageButton
+
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:drawable/screen_background_light"
-                    android:src="@drawable/note_stack_fill0_wght400_grad0_opsz24"
-                    android:layout_gravity="center"
-                    app:tint="@color/verdeFuentes"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Papel"
-                    android:textSize="13dp"
-                    android:backgroundTint="@color/white"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    />
+                    android:backgroundTint="@color/black"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageButton
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@android:drawable/screen_background_light"
+                        android:backgroundTint="@color/verde2"
+                        android:src="@drawable/note_stack_fill0_wght400_grad0_opsz24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@color/verde2"
+                        android:text="Papel"
+                        android:textSize="13dp" />
+
+                </androidx.cardview.widget.CardView>
 
             </FrameLayout>
             <FrameLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="5dp"
                 >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/black"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
 
                 <ImageButton
                     android:layout_width="match_parent"
@@ -72,25 +91,31 @@
                     android:layout_gravity="center"
                     android:background="@android:drawable/screen_background_light"
                     android:src="@drawable/local_dining_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+                    android:backgroundTint="@color/verde2"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Plasticos"
                     android:textSize="13dp"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/verde2"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     />
-
+                </androidx.cardview.widget.CardView>
             </FrameLayout>
             <FrameLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="5dp"
                 >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/black"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
 
                 <ImageButton
                     android:layout_width="match_parent"
@@ -98,44 +123,49 @@
                     android:layout_gravity="center"
                     android:background="@android:drawable/screen_background_light"
                     android:src="@drawable/devices_other_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+                    android:backgroundTint="@color/verde2"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Electronicos"
                     android:textSize="13dp"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/verde2"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     />
-
+                </androidx.cardview.widget.CardView>
             </FrameLayout>
             <FrameLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="5dp"
                 >
-
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/black"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:background="@android:drawable/screen_background_light"
                     android:src="@drawable/format_color_fill_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+                    android:backgroundTint="@color/verde2"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="aceite"
                     android:textSize="13dp"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/verde2"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     />
-
+                </androidx.cardview.widget.CardView>
             </FrameLayout>
         </LinearLayout>
         <LinearLayout
@@ -147,105 +177,125 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="5dp"
                 >
-
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/black"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:background="@android:drawable/screen_background_light"
                     android:src="@drawable/liquor_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+                    android:backgroundTint="@color/verde2"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vidrio"
                     android:textSize="13dp"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/verde2"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     />
-
+                </androidx.cardview.widget.CardView>
             </FrameLayout>
             <FrameLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="5dp"
                 >
-
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/black"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:background="@android:drawable/screen_background_light"
                     android:src="@drawable/compost_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+                    android:backgroundTint="@color/verde2"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Organicos"
                     android:textSize="13dp"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/verde2"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     />
-
+                </androidx.cardview.widget.CardView>
             </FrameLayout>
             <FrameLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="5dp"
                 >
-
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/black"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:background="@android:drawable/screen_background_light"
                     android:src="@drawable/battery_full_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+                    android:backgroundTint="@color/verde2"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Baterias"
                     android:textSize="13dp"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/verde2"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     />
-
+                </androidx.cardview.widget.CardView>
             </FrameLayout>
             <FrameLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="5dp"
                 >
-
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/black"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:background="@android:drawable/screen_background_light"
                     android:src="@drawable/styler_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+                    android:backgroundTint="@color/verde2"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Textiles"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/verde2"
                     android:textSize="13dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     />
-
+                </androidx.cardview.widget.CardView>
             </FrameLayout>
         </LinearLayout>
     </LinearLayout>
@@ -264,38 +314,45 @@
 
             />
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@color/white"
+            android:background="@color/verdeFondo"
             android:orientation="vertical"
             android:layout_gravity="center"
             android:padding="5dp"
+
             >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/verde2"
+                android:padding="10dp"
+                app:cardCornerRadius="10dp">
 
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:background="@android:drawable/screen_background_light"
                 android:src="@drawable/do_not_disturb_on_fill0_wght400_grad0_opsz24"
-                app:tint="@color/verdeFuentes" />
+                android:backgroundTint="@color/verde2"/>
 
-            <TextView
-                android:id="@+id/tvSeleccion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ninguna"
-                android:layout_gravity="center"
-                android:background="@color/white"
-                android:textSize="16sp"
-                android:layout_marginTop="2sp"
-                android:textStyle="bold"
-                />
+                <TextView
+                    android:id="@+id/tvSeleccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
 
+                    android:layout_marginTop="28sp"
+                    android:backgroundTint="@color/verde2"
+                    android:text="Ninguna"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
+        </FrameLayout>
 
 
     </LinearLayout>
@@ -303,7 +360,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingTop="15dp">
@@ -315,14 +372,18 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:backgroundTint="@color/verde2"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Cantidad"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:backgroundTint="@color/verde2"
+                />
 
             <TextView
                 android:id="@+id/CantidadTV"
@@ -331,7 +392,9 @@
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
                 android:text="0"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:backgroundTint="@color/verde2"
+                />
 
             <SeekBar
                 android:id="@+id/cantidad_seekbar"
@@ -347,7 +410,7 @@
             android:layout_width="160dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-
+            android:backgroundTint="@color/verde2"
             >
 
             <TextView
@@ -355,7 +418,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Mes"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:backgroundTint="@color/verde2"
+                />
 
             <TextView
                 android:id="@+id/horasDiariasTV"
@@ -364,7 +429,9 @@
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
                 android:text="Enero"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:backgroundTint="@color/verde2"
+                />
 
             <SeekBar
                 android:id="@+id/horas_seekbar"
@@ -388,7 +455,7 @@
         android:layout_height="wrap_content"
         android:onClick="lanzarSegundaActividad"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Registrar" />
 
 </LinearLayout>

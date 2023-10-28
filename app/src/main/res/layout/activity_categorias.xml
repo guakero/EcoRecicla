@@ -49,7 +49,7 @@
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:background="@color/white">
+                android:background="@color/verde2">
 
                 <ImageButton
                     android:id="@+id/btnPapel"
@@ -57,12 +57,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:background="@color/white"
+                    android:background="@color/verde2"
                     android:scaleType="fitCenter"
                     android:scaleX="2"
                     android:scaleY="2"
                     android:src="@drawable/note_stack_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <TextView
@@ -71,7 +71,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:text="Papel"
-                    android:textColor="@color/verdeFuentes" />
+                    android:textColor="@color/verdeFuentes"
+                    android:background="@color/verde2"
+                    />
             </FrameLayout>
 
             <FrameLayout
@@ -79,7 +81,7 @@
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:background="@color/white">
+                android:background="@color/verde2">
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -88,7 +90,7 @@
                     android:layout_marginTop="20dp"
                     android:scaleX="2"
                     android:scaleY="2"
-                    android:background="@color/white"
+                    android:background="@color/verde2"
                     android:src="@drawable/local_dining_fill0_wght400_grad0_opsz24"
                     app:tint="@color/verdeFuentes"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -99,7 +101,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:text="Plastico"
-                    android:textColor="@color/verdeFuentes" />
+                    android:textColor="@color/verdeFuentes"
+                    android:background="@color/verde2"
+                    />
             </FrameLayout>
 
 
@@ -123,7 +127,7 @@
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:background="@color/white">
+                android:background="@color/verde2">
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -132,9 +136,8 @@
                     android:layout_marginTop="20dp"
                     android:scaleX="2"
                     android:scaleY="2"
-                    android:background="@color/white"
+                    android:background="@color/verde2"
                     android:src="@drawable/devices_other_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <TextView
@@ -143,6 +146,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:text="Electronicos"
+                    android:background="@color/verde2"
                     android:textColor="@color/verdeFuentes" />
             </FrameLayout>
 
@@ -151,7 +155,7 @@
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:background="@color/white">
+                android:background="@color/verde2">
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -160,9 +164,8 @@
                     android:layout_marginTop="20dp"
                     android:scaleX="2"
                     android:scaleY="2"
-                    android:background="@color/white"
+                    android:background="@color/verde2"
                     android:src="@drawable/format_color_fill_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <TextView
@@ -171,7 +174,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:text="Aceite"
-                    android:textColor="@color/verdeFuentes" />
+                    android:textColor="@color/verdeFuentes"
+                    android:background="@color/verde2"
+                    />
             </FrameLayout>
 
         </LinearLayout>
@@ -192,18 +197,18 @@
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:background="@color/white">
+                android:background="@color/verde2">
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:background="@color/white"
+                    android:background="@color/verde2"
                     android:scaleX="2"
                     android:scaleY="2"
                     android:src="@drawable/liquor_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
+
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <TextView
@@ -212,7 +217,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:text="Vidrio"
-                    android:textColor="@color/verdeFuentes" />
+                    android:textColor="@color/verdeFuentes"
+                    android:background="@color/verde2"
+                    />
             </FrameLayout>
 
             <FrameLayout
@@ -220,18 +227,17 @@
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:background="@color/white">
+                android:background="@color/verde2">
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
-                    android:background="@color/white"
+                    android:background="@color/verde2"
                     android:scaleX="2"
                     android:scaleY="2"
                     android:src="@drawable/battery_full_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <TextView
@@ -240,7 +246,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:text="Baterias"
-                    android:textColor="@color/verdeFuentes" />
+                    android:textColor="@color/verdeFuentes"
+                    android:background="@color/verde2"
+                    />
             </FrameLayout>
 
         </LinearLayout>
@@ -261,7 +269,7 @@
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:background="@color/white">
+                android:background="@color/verde2">
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -270,7 +278,7 @@
                     android:layout_marginTop="20dp"
                     android:scaleX="2"
                     android:scaleY="2"
-                    android:background="@color/white"
+                    android:background="@color/verde2"
                     android:src="@drawable/compost_fill0_wght400_grad0_opsz24"
                     app:tint="@color/verdeFuentes"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -281,7 +289,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:text="Organico"
-                    android:textColor="@color/verdeFuentes" />
+                    android:textColor="@color/verdeFuentes"
+                    android:background="@color/verde2"
+                    />
             </FrameLayout>
 
             <FrameLayout
@@ -289,7 +299,7 @@
                 android:layout_height="100dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:background="@color/white">
+                android:background="@color/verde2">
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -298,9 +308,8 @@
                     android:layout_marginTop="20dp"
                     android:scaleX="2"
                     android:scaleY="2"
-                    android:background="@color/white"
+                    android:background="@color/verde2"
                     android:src="@drawable/styler_fill0_wght400_grad0_opsz24"
-                    app:tint="@color/verdeFuentes"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <TextView
@@ -309,7 +318,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:text="Textiles"
-                    android:textColor="@color/verdeFuentes" />
+                    android:textColor="@color/verdeFuentes"
+                    android:background="@color/verde2"
+                    />
             </FrameLayout>
 
         </LinearLayout>

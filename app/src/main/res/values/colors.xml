@@ -3,8 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="verde">#002106</color>
+    <color name="verde2">#A4F5AA</color>
     <color name="verdeFondo">#EFFFED</color>
     <color name="verdeFuentes">#002107</color>
     <color name="verdeFuente2">#002107</color>
+    <color name="rojo">#F44336</color>
 
 </resources>
