@@ -1,9 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Estadisticas">
+    tools:context=".Estadisticas_organicos_aceites"
+    android:orientation="vertical"
+    >
+    <ImageView
+        android:id="@+id/imgIcono2"
+        android:layout_width="119dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/eco_recicla_icono_temp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="ESTADISTICA MENSUAL DE RECICLAJE POR CATEGORIA"
+        android:layout_marginBottom="30dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="40dp"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="10dp"
+            >
+            <Button
+                android:id="@+id/btnPapelyPlastico"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:backgroundTint="@color/verde2"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:strokeColor="@color/black"
+                tools:ignore="RtlCompat"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/verde2"
+
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:backgroundTint="@color/verde2"
+                    android:layout_marginRight="20dp"
+                    >
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/verde2"
+                        android:src="@drawable/note_stack_fill0_wght400_grad0_opsz24"
+                        app:tint="@color/black" />
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/verde2"
+                        android:src="@drawable/local_dining_fill0_wght400_grad0_opsz24"
+                        app:tint="@color/black" />
+
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Papel y Plastico"
+                    android:backgroundTint="@color/verde2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="10dp"
+            >
+            <Button
+                android:id="@+id/btnElectronicosyBaterias"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:backgroundTint="@color/verde2"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:strokeColor="@color/black"
+                tools:ignore="RtlCompat"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/verde2"
+
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="@color/verde2"
+                    >
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/verde2"
+                        android:src="@drawable/devices_other_fill0_wght400_grad0_opsz24"
+                        app:tint="@color/black" />
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/verde2"
+                        android:src="@drawable/battery_full_fill0_wght400_grad0_opsz24"
+                        app:tint="@color/black" />
+
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Equipos Electronicos y Baterias"
+                    android:backgroundTint="@color/verde2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="10dp"
+            >
+            <Button
+                android:id="@+id/btnVidrioYtextiles"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:backgroundTint="@color/verde2"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:strokeColor="@color/black"
+                tools:ignore="RtlCompat"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/verde2"
+
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="@color/verde2"
+                    >
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/verde2"
+                        android:src="@drawable/liquor_fill0_wght400_grad0_opsz24"
+                        app:tint="@color/black" />
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/verde2"
+                        android:src="@drawable/styler_fill0_wght400_grad0_opsz24"
+                        app:tint="@color/black" />
+
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vidrio y textiles"
+                    android:backgroundTint="@color/verde2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="10dp"
+            >
+            <Button
+                android:id="@+id/BtnOrganicosyAceite"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:backgroundTint="@color/verde2"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:strokeColor="@color/black"
+                tools:ignore="RtlCompat"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="@color/verde2"
+
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="@color/verde2"
+                    >
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/verde2"
+                        android:src="@drawable/compost_fill0_wght400_grad0_opsz24"
+                        app:tint="@color/black" />
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/verde2"
+                        android:src="@drawable/format_color_fill_fill0_wght400_grad0_opsz24"
+                        app:tint="@color/black" />
+
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Organicos y aceites"
+                    android:backgroundTint="@color/verde2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
