@@ -9,8 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dario.ecorecicla.modelos.FileManager;
 import com.shawnlin.numberpicker.NumberPicker;
@@ -26,7 +28,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
     private NumberPicker numberPickerYear;
     private TextView cantidadTV;
     private Button registrarBtn;
-
+    private ImageView imageViewIcon;
 
     private int cantidad;
 
@@ -60,9 +62,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
         btnRegistroTextiles = findViewById(R.id.btnTextilesRegistro);
         btnRegistroVidrio = findViewById(R.id.btnVidrioRegistro);
         seleccionRegistroTV = findViewById(R.id.tvSeleccionRegistro);
-
-
-
+        imageViewIcon = findViewById(R.id.iconRegistro);
 
 
 
@@ -101,12 +101,18 @@ public class RegistroDeReciclaje extends AppCompatActivity {
         registrarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // obtener datos
                 int mes = numberPickerMes.getValue();
                 int year = numberPickerYear.getValue();
                 String materialStr = (String) seleccionRegistroTV.getText();
-                String datosLeidos = FileManager.LeerArchivo()
-                Materiales material = new Materiales(materialStr, mes, year,cantidad);
-                Materiales.guardarDatos(getFilesDir(), material);
+
+                // validar selección de material
+                if (materialStr.equals("Ninguno")){
+                    Toast.makeText(RegistroDeReciclaje.this, "Por favor seleccione material de reciclaje", Toast.LENGTH_SHORT).show();
+
+                }else{
+                    guardarDatos(materialStr,mes,year,cantidad);
+                }
             }
 
         });
@@ -115,8 +121,82 @@ public class RegistroDeReciclaje extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 seleccionRegistroTV.setText("Papel");
-
+                imageViewIcon.setImageResource(R.drawable.note_stack_fill0_wght400_grad0_opsz24);
             }
         });
+
+        btnRegistroPlasticos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seleccionRegistroTV.setText("Plasticos");
+                imageViewIcon.setImageResource(R.drawable.local_dining_fill0_wght400_grad0_opsz24);
+            }
+        });
+
+        btnRegistroElectronicos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seleccionRegistroTV.setText("Electronicos");
+                imageViewIcon.setImageResource(R.drawable.devices_other_fill0_wght400_grad0_opsz24);
+            }
+        });
+
+        btnRegistroAceite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seleccionRegistroTV.setText("Aceite");
+                imageViewIcon.setImageResource(R.drawable.format_color_fill_fill0_wght400_grad0_opsz24);
+            }
+        });
+
+        btnRegistroVidrio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seleccionRegistroTV.setText("Vidrio");
+                imageViewIcon.setImageResource(R.drawable.liquor_fill0_wght400_grad0_opsz24);
+            }
+        });
+
+        btnRegistroOrganicos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seleccionRegistroTV.setText("Organicos");
+                imageViewIcon.setImageResource(R.drawable.compost_fill0_wght400_grad0_opsz24);
+            }
+        });
+
+        btnRegistroBaterias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seleccionRegistroTV.setText("Baterias");
+                imageViewIcon.setImageResource(R.drawable.battery_full_fill0_wght400_grad0_opsz24);
+            }
+        });
+
+        btnRegistroTextiles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                seleccionRegistroTV.setText("Textiles");
+                imageViewIcon.setImageResource(R.drawable.styler_fill0_wght400_grad0_opsz24);
+            }
+        });
+    }
+
+
+
+    private void guardarDatos(String materialStr, int mes, int year, int cantidad) {
+        // creamos objeto material con el tipo seleccionado
+        Materiales material = new Materiales(materialStr, mes, year,cantidad);
+        // guardamos datos y obtenemos el status de guardado
+        String savestatus = Materiales.guardarDatos(getFilesDir(), material);
+        // printiamos resultado
+        if (savestatus.equals("Guardado con exito")){
+            Toast.makeText(RegistroDeReciclaje.this, savestatus, Toast.LENGTH_SHORT).show();
+
+        }else {
+            Toast.makeText(RegistroDeReciclaje.this, savestatus, Toast.LENGTH_SHORT).show();
+
+        }
+
     }
 }

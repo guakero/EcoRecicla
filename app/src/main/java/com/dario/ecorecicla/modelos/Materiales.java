@@ -1,6 +1,10 @@
 package com.dario.ecorecicla.modelos;
 
+import android.view.Gravity;
 import android.widget.Switch;
+import android.widget.Toast;
+
+import com.dario.ecorecicla.RegistroDeReciclaje;
 
 import java.io.File;
 import java.util.regex.Matcher;
@@ -58,35 +62,136 @@ public class Materiales {
         String material = materiales.getMaterial();
         int mes = materiales.getMes();
         int year = materiales.getYear();
-        File fileImput;
+        File fileInput;
+
 
         String data = material + ", " + mes + ", " + year + ", "+materialesObtenidos;
-
+        String mesYear = mes + ", " + year;
+        String saveStatus = "";
+        String datosLeidos = "";
 
         switch(material){
 
             case "Papel":
 
-                fileImput = FileManager.crearArchivo(file,"DatosPapel.txt");
+                fileInput = FileManager.crearArchivo(file,"DatosPapel.txt");
+                datosLeidos = FileManager.LeerArchivo(fileInput);
 
-                String DatosLeidos = FileManager.LeerArchivo(fileImput);
-                validacionFecha(DatosLeidos, data);
-                FileManager.EscrituraArchivo(fileImput,data);
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
                 break;
 
+            case "Plasticos":
+
+                fileInput = FileManager.crearArchivo(file,"DatosPlastico.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Electronicos":
+
+                fileInput = FileManager.crearArchivo(file,"DatosElectronicos.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Aceite":
+
+                fileInput = FileManager.crearArchivo(file,"DatosAceite.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Vidrio":
+
+                fileInput = FileManager.crearArchivo(file,"DatosVidrio.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Organicos":
+
+                fileInput = FileManager.crearArchivo(file,"DatosOrganicos.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Baterias":
+
+                fileInput = FileManager.crearArchivo(file,"DatosBaterias.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+            case "Textiles":
+
+                fileInput = FileManager.crearArchivo(file,"DatosTextiles.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
 
         }
 
-
-
-
-        return null;
+        return saveStatus;
     }
 
-    private static boolean validacionFecha(String datosLeidos, String datosIngredados) {
+    private static boolean validacionFecha(String datosLeidos, String mesYear) {
 
-        Pattern patron = Pattern.compile("^Papel, 1, ([0-9]+), ([0-9]+)$");
-        Matcher coincidencia = patron.matcher(datosLeidos);
+        if (datosLeidos.contains(mesYear)){
+            System.out.println("ya esta el mes");
+            return false;
+        }else{
+            System.out.println("no existe mes");
+            return true;
+
+        }
+
 
     }
 
