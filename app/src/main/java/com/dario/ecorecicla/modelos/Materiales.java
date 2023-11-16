@@ -3,17 +3,21 @@ package com.dario.ecorecicla.modelos;
 import android.widget.Switch;
 
 import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Materiales {
 
     private String material;
-    private String mes;
-    private float cantidad;
+    private int mes;
+    private int year;
+    private int cantidad;
 
 
-    public Materiales (String material, String mes, float cantidad){
+    public Materiales (String material, int mes, int year, int cantidad){
         this.material = material;
         this.mes = mes;
+        this.year = year;
         this.cantidad = cantidad;
     }
 
@@ -25,32 +29,49 @@ public class Materiales {
         this.material = material;
     }
 
-    public String getMes() {
+    public int getMes() {
         return mes;
     }
 
-    public void setMes(String mes) {
+    public void setMes(int mes) {
         this.mes = mes;
     }
 
-    public float getCantidad() {
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(float cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
     public static String guardarDatos(File file,Materiales materiales){
-        float materialesObtinidos = materiales.getCantidad();
+        int materialesObtenidos = materiales.getCantidad();
         String material = materiales.getMaterial();
-        String mes = materiales.getMes();
+        int mes = materiales.getMes();
+        int year = materiales.getYear();
+        File fileImput;
+
+        String data = material + ", " + mes + ", " + year + ", "+materialesObtenidos;
+
 
         switch(material){
+
             case "Papel":
 
-                FileManager.crearArchivo(file,"DatosPapel.txt");
-                FileManager.EscrituraArchivo("",file);
+                fileImput = FileManager.crearArchivo(file,"DatosPapel.txt");
+
+                String DatosLeidos = FileManager.LeerArchivo(fileImput);
+                validacionFecha(DatosLeidos, data);
+                FileManager.EscrituraArchivo(fileImput,data);
                 break;
 
 
@@ -60,6 +81,13 @@ public class Materiales {
 
 
         return null;
+    }
+
+    private static boolean validacionFecha(String datosLeidos, String datosIngredados) {
+
+        Pattern patron = Pattern.compile("^Papel, 1, ([0-9]+), ([0-9]+)$");
+        Matcher coincidencia = patron.matcher(datosLeidos);
+
     }
 
 }

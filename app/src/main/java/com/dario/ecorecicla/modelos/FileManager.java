@@ -8,6 +8,8 @@ import java.io.IOException;
 
 public  class FileManager {
 
+
+
     public static File crearArchivo(File archivo,String nombreArchivo ){
         File file = new File(archivo+nombreArchivo);
 
@@ -29,6 +31,8 @@ public  class FileManager {
             FileWriter fileWirter = new FileWriter(archivo);
             fileWirter.write(texto);
             fileWirter.close();
+            System.out.println("el archivo fue escrito");
+
         }catch (IOException ex){
             ex.printStackTrace();
         }

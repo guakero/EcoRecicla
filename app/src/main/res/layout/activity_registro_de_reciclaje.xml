@@ -53,6 +53,7 @@
                     app:cardCornerRadius="10dp">
 
                     <ImageButton
+                        android:id="@+id/btnPapelRegistro"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -86,6 +87,7 @@
                     app:cardCornerRadius="10dp">
 
                 <ImageButton
+                    android:id="@+id/btnPlasticoRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -118,6 +120,7 @@
                     app:cardCornerRadius="10dp">
 
                 <ImageButton
+                    android:id="@+id/btnElectronicosRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -149,6 +152,7 @@
                     android:padding="10dp"
                     app:cardCornerRadius="10dp">
                 <ImageButton
+                    android:id="@+id/btnAceiteRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -186,6 +190,7 @@
                     android:padding="10dp"
                     app:cardCornerRadius="10dp">
                 <ImageButton
+                    android:id="@+id/btnVidrioRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -217,6 +222,7 @@
                     android:padding="10dp"
                     app:cardCornerRadius="10dp">
                 <ImageButton
+                    android:id="@+id/btnOrganicosRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -248,6 +254,7 @@
                     android:padding="10dp"
                     app:cardCornerRadius="10dp">
                 <ImageButton
+                    android:id="@+id/btnBateriasRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -279,6 +286,7 @@
                     android:padding="10dp"
                     app:cardCornerRadius="10dp">
                 <ImageButton
+                    android:id="@+id/btnTextilesRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -303,7 +311,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -340,11 +348,10 @@
                 android:backgroundTint="@color/verde2"/>
 
                 <TextView
-                    android:id="@+id/tvSeleccion"
+                    android:id="@+id/tvSeleccionRegistro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-
                     android:layout_marginTop="28sp"
                     android:backgroundTint="@color/verde2"
                     android:text="Ninguna"
@@ -363,7 +370,7 @@
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingTop="15dp">
+        android:paddingTop="10dp">
 
 
 
@@ -373,7 +380,7 @@
             android:layout_gravity="center"
             android:layout_marginRight="10dp"
             android:orientation="vertical"
-            android:backgroundTint="@color/verde2"
+
             >
 
             <TextView
@@ -382,18 +389,18 @@
                 android:layout_gravity="center_horizontal"
                 android:text="Cantidad"
                 android:textSize="17sp"
-                android:backgroundTint="@color/verde2"
+
                 />
 
             <TextView
-                android:id="@+id/CantidadTV"
+                android:id="@+id/cantidadTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
                 android:text="0"
                 android:textSize="20sp"
-                android:backgroundTint="@color/verde2"
+
                 />
 
             <SeekBar
@@ -410,37 +417,92 @@
             android:layout_width="160dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:backgroundTint="@color/verde2"
+
             >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Mes"
+                android:text="fecha"
                 android:textSize="17sp"
-                android:backgroundTint="@color/verde2"
+
                 />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
 
             <TextView
-                android:id="@+id/horasDiariasTV"
+                android:id="@+id/mesTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:paddingTop="10dp"
-                android:text="Enero"
-                android:textSize="20sp"
-                android:backgroundTint="@color/verde2"
+                android:text="Mes"
+                android:textSize="15sp"
+                android:layout_weight="1"
+                android:textAlignment="center"
                 />
 
-            <SeekBar
-                android:id="@+id/horas_seekbar"
+                <TextView
+                    android:id="@+id/yearTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Año"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:max="12"
-                android:paddingTop="10dp"
-                android:progress="0" />
+                android:background="@color/verdeFondo"
+                android:backgroundTint="@color/verdeFondo"
+                >
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/timeSelektaMes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    app:np_dividerColor="#0000"
+                    app:np_height="180dp"
+                    app:np_max="12"
+                    app:np_min="1"
+                    app:np_selectedTextColor="#000"
+                    app:np_selectedTextSize="30dp"
+                    app:np_textColor="@color/black"
+                    app:np_textSize="15dp"
+                    app:np_value="0"
+                    app:np_wheelItemCount="5"
+                    app:np_width="64dp"
+                    android:layout_weight="1"
+
+                    tools:ignore="SpeakableTextPresentCheck" />
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/timeSelektaYear"
+                    android:background="@color/verdeFondo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+
+                    app:np_dividerColor="#0000"
+                    app:np_height="180dp"
+                    app:np_max="99"
+                    app:np_min="23"
+                    app:np_selectedTextColor="#000"
+                    app:np_selectedTextSize="30dp"
+                    app:np_textColor="@color/black"
+                    app:np_textSize="15dp"
+                    app:np_value="0"
+                    app:np_wheelItemCount="5"
+                    app:np_width="64dp"
+                    android:layout_weight="1"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
         </LinearLayout>
 
 
@@ -450,12 +512,12 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRegistrarReciclaje"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:onClick="lanzarSegundaActividad"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="Registrar" />
 
 </LinearLayout>
