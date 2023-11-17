@@ -2,8 +2,11 @@ package com.dario.ecorecicla;
 
 import static android.content.ContentValues.TAG;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +22,7 @@ import com.shawnlin.numberpicker.NumberPicker;
 
 import com.dario.ecorecicla.modelos.Materiales;
 
+import java.io.File;
 import java.util.Locale;
 
 public class RegistroDeReciclaje extends AppCompatActivity {
@@ -108,8 +112,8 @@ public class RegistroDeReciclaje extends AppCompatActivity {
 
                 // validar selección de material
                 if (materialStr.equals("Ninguno")){
-                    Toast.makeText(RegistroDeReciclaje.this, "Por favor seleccione material de reciclaje", Toast.LENGTH_SHORT).show();
-
+                    String alerta = "Por favor seleccione material de reciclaje";
+                    alertDialog(alerta);
                 }else{
                     guardarDatos(materialStr,mes,year,cantidad);
                 }
@@ -182,21 +186,72 @@ public class RegistroDeReciclaje extends AppCompatActivity {
         });
     }
 
-
-
     private void guardarDatos(String materialStr, int mes, int year, int cantidad) {
+        String alerta = "";
         // creamos objeto material con el tipo seleccionado
         Materiales material = new Materiales(materialStr, mes, year,cantidad);
         // guardamos datos y obtenemos el status de guardado
         String savestatus = Materiales.guardarDatos(getFilesDir(), material);
         // printiamos resultado
         if (savestatus.equals("Guardado con exito")){
-            Toast.makeText(RegistroDeReciclaje.this, savestatus, Toast.LENGTH_SHORT).show();
-
+            alerta = "Se ha guardado el archivo exitosamente";
+            alertDialog(alerta);
+            leerDatosGuardados();
         }else {
-            Toast.makeText(RegistroDeReciclaje.this, savestatus, Toast.LENGTH_SHORT).show();
-
+            alerta = "Los datos ya existen desea sobre escribirlos ?";
+            alertDialog2(alerta,materialStr, mes, year,cantidad);
         }
+
+    }
+
+    private void alertDialog (String alerta){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage(alerta)
+                .setCancelable(false)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Acción al presionar el botón Aceptar
+                        dialog.cancel();
+                    }
+                });
+        builder.show();
+
+    }
+    private void alertDialog2 (String alerta,String materialStr,int mes, int year, int cantidad){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage(alerta)
+                .setCancelable(false)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Acción al presionar el botón Aceptar
+                        Materiales material = new Materiales(materialStr, mes, year,cantidad);
+                        // guardamos datos y obtenemos el status de guardado
+                        Materiales.sobrescribirDatos(getFilesDir(), material);
+                        dialog.cancel();
+                        alertDialog("Archivo modificado");
+
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Acción al presionar el botón Cancelar
+
+                        dialog.cancel();
+
+                    }
+                });
+        builder.show();
+
+    }
+
+    private void leerDatosGuardados (){
+        File fileInput;
+        String datosLeidos;
+        fileInput = FileManager.crearAbrirArchivo(getFilesDir(),"DatosPapel.txt");
+        datosLeidos = FileManager.LeerArchivo(fileInput);
+        System.out.println(datosLeidos);
 
     }
 }

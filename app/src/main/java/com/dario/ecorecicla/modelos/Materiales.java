@@ -74,12 +74,17 @@ public class Materiales {
 
             case "Papel":
 
-                fileInput = FileManager.crearArchivo(file,"DatosPapel.txt");
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosPapel.txt");
                 datosLeidos = FileManager.LeerArchivo(fileInput);
 
                 if (validacionFecha(datosLeidos, mesYear)){
-                    FileManager.EscrituraArchivo(fileInput,data);
-                    saveStatus = "Guardado con exito";
+                    if(!FileManager.VerificarExistenciaArchivo(file,"DatosPapel.txt") ){
+                        FileManager.EscrituraArchivo(fileInput,data);
+                        saveStatus = "Guardado con exito";
+                    }else {
+                        FileManager.modificarArchivo(fileInput,data);
+                    }
+
                 }else {
                     saveStatus = "El mes ya esta registrado";
                 }
@@ -88,7 +93,7 @@ public class Materiales {
 
             case "Plasticos":
 
-                fileInput = FileManager.crearArchivo(file,"DatosPlastico.txt");
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosPlastico.txt");
 
                 if (validacionFecha(datosLeidos, mesYear)){
                     FileManager.EscrituraArchivo(fileInput,data);
@@ -101,7 +106,7 @@ public class Materiales {
 
             case "Electronicos":
 
-                fileInput = FileManager.crearArchivo(file,"DatosElectronicos.txt");
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosElectronicos.txt");
 
                 if (validacionFecha(datosLeidos, mesYear)){
                     FileManager.EscrituraArchivo(fileInput,data);
@@ -114,7 +119,7 @@ public class Materiales {
 
             case "Aceite":
 
-                fileInput = FileManager.crearArchivo(file,"DatosAceite.txt");
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosAceite.txt");
 
                 if (validacionFecha(datosLeidos, mesYear)){
                     FileManager.EscrituraArchivo(fileInput,data);
@@ -127,7 +132,7 @@ public class Materiales {
 
             case "Vidrio":
 
-                fileInput = FileManager.crearArchivo(file,"DatosVidrio.txt");
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosVidrio.txt");
 
                 if (validacionFecha(datosLeidos, mesYear)){
                     FileManager.EscrituraArchivo(fileInput,data);
@@ -140,7 +145,7 @@ public class Materiales {
 
             case "Organicos":
 
-                fileInput = FileManager.crearArchivo(file,"DatosOrganicos.txt");
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosOrganicos.txt");
 
                 if (validacionFecha(datosLeidos, mesYear)){
                     FileManager.EscrituraArchivo(fileInput,data);
@@ -153,7 +158,7 @@ public class Materiales {
 
             case "Baterias":
 
-                fileInput = FileManager.crearArchivo(file,"DatosBaterias.txt");
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosBaterias.txt");
 
                 if (validacionFecha(datosLeidos, mesYear)){
                     FileManager.EscrituraArchivo(fileInput,data);
@@ -165,7 +170,126 @@ public class Materiales {
                 break;
             case "Textiles":
 
-                fileInput = FileManager.crearArchivo(file,"DatosTextiles.txt");
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosTextiles.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+        }
+
+        return saveStatus;
+    }
+
+    public static String sobrescribirDatos(File file,Materiales materiales){
+        int materialesObtenidos = materiales.getCantidad();
+        String material = materiales.getMaterial();
+        int mes = materiales.getMes();
+        int year = materiales.getYear();
+        File fileInput;
+
+
+        String data = material + ", " + mes + ", " + year + ", "+materialesObtenidos;
+        String mesYear = mes + ", " + year;
+        String saveStatus = "";
+        String datosLeidos = "";
+
+        switch(material){
+
+            case "Papel":
+
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosPapel.txt");
+                datosLeidos = FileManager.LeerArchivo(fileInput);
+                        FileManager.SobreEscribirArchivo(fileInput,data,datosLeidos);
+                        saveStatus = "Guardado con exito";
+
+                break;
+
+            case "Plasticos":
+
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosPlastico.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Electronicos":
+
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosElectronicos.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Aceite":
+
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosAceite.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Vidrio":
+
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosVidrio.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Organicos":
+
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosOrganicos.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+
+            case "Baterias":
+
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosBaterias.txt");
+
+                if (validacionFecha(datosLeidos, mesYear)){
+                    FileManager.EscrituraArchivo(fileInput,data);
+                    saveStatus = "Guardado con exito";
+                }else {
+                    saveStatus = "El mes ya esta registrado";
+                }
+
+                break;
+            case "Textiles":
+
+                fileInput = FileManager.crearAbrirArchivo(file,"DatosTextiles.txt");
 
                 if (validacionFecha(datosLeidos, mesYear)){
                     FileManager.EscrituraArchivo(fileInput,data);
