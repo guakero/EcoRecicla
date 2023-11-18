@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,8 @@ public class RegistroDeReciclaje extends AppCompatActivity {
 
     private int cantidad;
 
+    private String unidad;
+
     private ImageButton btnRegistroPapel;
     private ImageButton btnRegistroPlasticos;
     private ImageButton btnRegistroElectronicos;
@@ -45,6 +48,10 @@ public class RegistroDeReciclaje extends AppCompatActivity {
     private ImageButton btnRegistroBaterias;
     private ImageButton btnRegistroTextiles;
     private TextView seleccionRegistroTV;
+    private RadioButton radioButtonLibras;
+    private RadioButton radioButtonKilos;
+    private RadioButton radioButtonLitros;
+    private RadioButton radioButtonItems;
 
 
     @Override
@@ -67,6 +74,11 @@ public class RegistroDeReciclaje extends AppCompatActivity {
         btnRegistroVidrio = findViewById(R.id.btnVidrioRegistro);
         seleccionRegistroTV = findViewById(R.id.tvSeleccionRegistro);
         imageViewIcon = findViewById(R.id.iconRegistro);
+        radioButtonLibras = findViewById(R.id.radioBtnLibras);
+        radioButtonKilos = findViewById(R.id.radioBtnKilos);
+        radioButtonLitros = findViewById(R.id.radioBtnLitros);
+        radioButtonItems = findViewById(R.id.radioBtnItems);
+
 
 
 
@@ -113,8 +125,12 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 // validar selección de material
                 if (materialStr.equals("Ninguno")){
                     String alerta = "Por favor seleccione material de reciclaje";
-                    alertDialog(alerta);
-                }else{
+                    alertDialog(alerta, materialStr);
+                } else if (unidad == null){
+                    String alerta = "Por favor seleccione unidad de medida";
+                    alertDialog(alerta, materialStr);
+                }
+                else{
                     guardarDatos(materialStr,mes,year,cantidad);
                 }
             }
@@ -184,19 +200,46 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 imageViewIcon.setImageResource(R.drawable.styler_fill0_wght400_grad0_opsz24);
             }
         });
+
+        radioButtonLitros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unidad = "Litros";
+            }
+        });
+
+        radioButtonLibras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unidad = "Libras";
+            }
+        });
+
+        radioButtonKilos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unidad = "Kilos";
+            }
+        });
+        radioButtonItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unidad = "Items";
+            }
+        });
     }
 
     private void guardarDatos(String materialStr, int mes, int year, int cantidad) {
         String alerta = "";
         // creamos objeto material con el tipo seleccionado
-        Materiales material = new Materiales(materialStr, mes, year,cantidad);
+        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad);
         // guardamos datos y obtenemos el status de guardado
         String savestatus = Materiales.guardarDatos(getFilesDir(), material);
         // printiamos resultado
         if (savestatus.equals("Guardado con exito")){
             alerta = "Se ha guardado el archivo exitosamente";
-            alertDialog(alerta);
-            leerDatosGuardados();
+
+            alertDialog(alerta, materialStr);
         }else {
             alerta = "Los datos ya existen desea sobre escribirlos ?";
             alertDialog2(alerta,materialStr, mes, year,cantidad);
@@ -204,7 +247,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
 
     }
 
-    private void alertDialog (String alerta){
+    private void alertDialog (String alerta, String materialStr){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setMessage(alerta)
@@ -212,6 +255,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Acción al presionar el botón Aceptar
+                        leerDatosGuardados(materialStr);
                         dialog.cancel();
                     }
                 });
@@ -226,11 +270,13 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Acción al presionar el botón Aceptar
-                        Materiales material = new Materiales(materialStr, mes, year,cantidad);
+                        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad);
                         // guardamos datos y obtenemos el status de guardado
                         Materiales.sobrescribirDatos(getFilesDir(), material);
+                        leerDatosGuardados(materialStr);
                         dialog.cancel();
-                        alertDialog("Archivo modificado");
+
+                        alertDialog("Archivo modificado",materialStr);
 
                     }
                 })
@@ -246,11 +292,11 @@ public class RegistroDeReciclaje extends AppCompatActivity {
 
     }
 
-    private void leerDatosGuardados (){
-        File fileInput;
-        String datosLeidos;
-        fileInput = FileManager.crearAbrirArchivo(getFilesDir(),"DatosPapel.txt");
-        datosLeidos = FileManager.LeerArchivo(fileInput);
+    private void leerDatosGuardados (String material){
+        String nombreArchivo = "/"+"Datos"+material+".txt";
+
+        File fileInput = FileManager.crearAbrirArchivo(getFilesDir(),nombreArchivo);
+        String datosLeidos = FileManager.LeerArchivo(fileInput);
         System.out.println(datosLeidos);
 
     }
