@@ -16,26 +16,38 @@
         android:theme="@style/Theme.EcoRecicla"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:parentActivityName=".Home" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+
+
+        <activity
+            android:name=".Ajustes"
+            android:exported="false" />
+        <activity
             android:name=".Estadisticas_organicos_aceites"
             android:exported="false"
-            android:parentActivityName=".Estadisticas"
-            />
+            android:parentActivityName=".Estadisticas" />
         <activity
             android:name=".Estadisticas_vidrio_textiles"
             android:exported="false"
-            android:parentActivityName=".Estadisticas"
-            />
+            android:parentActivityName=".Estadisticas" />
         <activity
             android:name=".Equipos_electronicos_baterias"
             android:exported="false"
-            android:parentActivityName=".Estadisticas"
-            />
-
+            android:parentActivityName=".Estadisticas" />
         <activity
             android:name=".Estadisticas_papel_plastico"
             android:exported="false"
-            android:parentActivityName=".Estadisticas"
-            />
+            android:parentActivityName=".Estadisticas" />
         <activity
             android:name=".Login"
             android:exported="false"
@@ -53,7 +65,16 @@
             android:parentActivityName=".Home" />
         <activity
             android:name=".Home"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+
         <activity
             android:name=".Consejos"
             android:exported="false"
@@ -78,6 +99,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

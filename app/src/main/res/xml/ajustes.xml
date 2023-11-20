@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Ajustes">
+
+        <SwitchPreference
+            android:key="Log Out status"
+            android:title="Log out"
+            android:icon="@drawable/battery_full_fill0_wght400_grad0_opsz24"
+            android:defaultValue="false"
+            />
+
+    </PreferenceCategory>
+</PreferenceScreen>
