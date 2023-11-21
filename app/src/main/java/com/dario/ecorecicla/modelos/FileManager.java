@@ -1,15 +1,24 @@
 package com.dario.ecorecicla.modelos;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+// Android-added: Info about UTF-8 usage in filenames.
 
+/**
+ * File manager crea lee y validad datos de archivo
+ */
 public  class FileManager {
 
 
-
+    /**
+     *recive el paht con getFilesDir() en el parametro File archivo y el String nombre del archivo
+     * texto
+     */
     public static File crearAbrirArchivo(File archivo,String nombreArchivo ){
         File file = new File(archivo+nombreArchivo);
         if(file.exists() ){
@@ -22,6 +31,11 @@ public  class FileManager {
         return file;
     }
 
+
+    /**
+     *recive file generado por crearAbrirArchivos en el parametro File archivo y el texto a escribir en el parametro
+     * texto
+     */
     public static void  EscrituraArchivo (File archivo, String texto){
 
         try {
@@ -37,6 +51,10 @@ public  class FileManager {
 
     }
 
+    /**
+     *recive el objeto file generado por la funcion crearAbrirArchivo
+     * texto y retorna string con contenido
+     */
     public static String LeerArchivo (File archivo){
         String lineReturn = "";
         try {
@@ -87,8 +105,6 @@ public  class FileManager {
                 return false;
             }
 
-
-
     }
     public static String SobreEscribirArchivo (File archivo, String datoNuevo, String datosViejos, String materialMesYear){
 
@@ -101,7 +117,34 @@ public  class FileManager {
 
     }
 
+    public static void logPy(String mensaje) {
+        Log.i("Puki", mensaje);
     }
+
+    /**
+     *recive el paht con getFilesDir() en el parametro File archivo, el nombre del archivo en el parametro
+     * texto, y el dato a validar en el parametro dato a validar.
+     * retorna un booleano con la validadcion
+     */
+    public static boolean ValidarExistenciadeDato (File path,String nombreArchivo, String datoAValidar){
+        File archivo = crearAbrirArchivo(path,nombreArchivo);
+        String data = LeerArchivo(archivo);
+        // cortamos los datos pero el psw queda con \n asi que hay que cortarlo
+        String[] datos = data.split(", ");
+        // sacamos el ultimo index
+        int lastIndex = datos[2].length();
+        // cortamos
+        String datoPsw = datos[2].substring(0,lastIndex-2);
+
+        if (datoPsw.equals(datoAValidar)){
+            return true;
+        }
+        return false;
+
+    }
+
+    }
+
 
 
 

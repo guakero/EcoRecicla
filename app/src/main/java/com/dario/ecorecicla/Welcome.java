@@ -3,7 +3,9 @@ package com.dario.ecorecicla;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,6 +21,7 @@ public class Welcome extends AppCompatActivity {
 
         iniciarSesionBtn = findViewById(R.id.iniciarSesionBtn);
         registrarseBtn = findViewById(R.id.registrarseBtn);
+
 
         iniciarSesionBtn.setOnClickListener(new View.OnClickListener() {
             @Override

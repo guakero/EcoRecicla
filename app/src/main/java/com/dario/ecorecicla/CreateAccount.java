@@ -48,16 +48,18 @@ public class CreateAccount extends AppCompatActivity {
                 alertDialog("Por favor llene todos los capos");
             } else if (!checkTerminos.isChecked()) {
                 alertDialog("Por favor acepte los terminos");
-            } else if (psw!=pswR) {
+            } else if (!psw.equals(pswR)) {
                 alertDialog("Las contraseñas introducidas no coinciden");
             } else{
                 User usuario = new User(nombre,usuarioStr,psw);
-                usuario.setUsuario(usuarioData);
-                alertDialog("El usuario a sido creado con exito");
-                usuarioCreado = true;
+                if (usuario.guardarUsuario(usuario,getFilesDir())){
+                    alertDialog("El usuario "+ usuarioStr +"a sido creado con exito");
+                    usuarioCreado = true;
+                }else {
+                    alertDialog("El usuario ya existe");
+                }
 
             }
-
 
         }
     });

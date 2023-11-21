@@ -39,13 +39,21 @@ public class User {
     }
 
 
-    public static void guardarUsuario (User usuario, File file){
+    public static Boolean guardarUsuario (User usuario,File path ){
         String datosUsuario = usuario.getNombre()+ ", "+ usuario.getUsuario()  + ", "+ usuario.getContraseña();
-        File fileUser = FileManager.crearAbrirArchivo(file,"usuario: "+usuario.getNombre());
-        FileManager.EscrituraArchivo(fileUser, datosUsuario);
-        String datosleidos = FileManager.LeerArchivo(fileUser);
-        if(!datosleidos.equals("") ){
+
+        if (FileManager.VerificarExistenciaArchivo(path,"usuario: "+usuario.getUsuario()+".txt")){
+            // retorna falso si ya esta registrado ese usuario
+            return false;
+        }else {
+            File fileUser = FileManager.crearAbrirArchivo(path,"usuario: "+usuario.getUsuario()+".txt");
+            FileManager.EscrituraArchivo(fileUser, datosUsuario);
+            String datosleidos = FileManager.LeerArchivo(fileUser);
+            System.out.println(datosleidos);
+            // retorna verdadero si ya esta registrado ese usuario
+            return true;
+        }
 
         }
     }
-}
+
