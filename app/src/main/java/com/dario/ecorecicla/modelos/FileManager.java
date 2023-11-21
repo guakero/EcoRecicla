@@ -10,18 +10,15 @@ public  class FileManager {
 
 
 
-    public static File crearArchivo(File archivo,String nombreArchivo ){
+    public static File crearAbrirArchivo(File archivo,String nombreArchivo ){
         File file = new File(archivo+nombreArchivo);
+        if(file.exists() ){
 
-        try {
-            if (file.createNewFile()) {
-                System.out.println("el archivo fue creado");
-            } else {
-                System.out.println("el archivo ya existe");
-            }
-        }catch (IOException ex){
-            ex.printStackTrace();
+            System.out.println("el archivo"+archivo+ nombreArchivo +" ya existe");
+        }else {
+            System.out.println("el archivo "+archivo + nombreArchivo +" fue creado");
         }
+
         return file;
     }
 
@@ -31,11 +28,13 @@ public  class FileManager {
             FileWriter fileWirter = new FileWriter(archivo);
             fileWirter.write(texto);
             fileWirter.close();
-            System.out.println("el archivo fue escrito");
+
 
         }catch (IOException ex){
             ex.printStackTrace();
         }
+        System.out.println("Escribi "+texto);
+
     }
 
     public static String LeerArchivo (File archivo){
@@ -50,7 +49,6 @@ public  class FileManager {
             while ((line = bufferedReader.readLine())!= null) {
                 contenido.append(line).append("\n ");
 
-
             }
             bufferedReader.close();
             reader.close();
@@ -64,15 +62,13 @@ public  class FileManager {
         return lineReturn;
 
     }
-
-
-    public static void modificarArchivo (File archivo, String texto){
+    public static void modificarArchivo (File path, String texto){
 
         try {
-            FileWriter writer = new FileWriter(archivo, true);
+            FileWriter writer = new FileWriter(path, true);
             writer.write("\n"+texto);
             writer.close();
-            System.out.println("archivo modificado");
+            System.out.println("archivo"+path+" modificado con "+ texto);
 
 
         }catch (IOException ex){
@@ -80,6 +76,32 @@ public  class FileManager {
         }
 
     }
-}
+    public static boolean VerificarExistenciaArchivo (File archivo,String nombreArchivo){
+
+            File file = new File(archivo+nombreArchivo);
+            if(file.exists() ){
+                System.out.println("EX VAL: el archivo existe");
+                return true;
+            }else {
+                System.out.println("EX VAL:el archivo no existe");
+                return false;
+            }
+
+
+
+    }
+    public static String SobreEscribirArchivo (File archivo, String datoNuevo, String datosViejos, String materialMesYear){
+
+        // Construye el regex para hacer el remplazo
+        String regex = materialMesYear +", ..?.?, ......?";
+        // genera el nuevo string y lo detorna
+        String nuevoString = datosViejos.replaceAll(regex, datoNuevo);
+
+        return nuevoString;
+
+    }
+
+    }
+
 
 

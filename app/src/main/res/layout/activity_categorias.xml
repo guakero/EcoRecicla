@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imgIcono"
-        android:layout_width="119dp"
-        android:layout_height="71dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/eco_recicla_completo"
         android:layout_marginTop="40dp"
-        android:src="@drawable/eco_recicla_icono_temp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

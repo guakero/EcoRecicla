@@ -1,524 +1,655 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/verdeFondo"
+    android:backgroundTint="@color/verdeFondo"
+    >
 
-    <ImageView
-        android:id="@+id/imgIcono2"
-        android:layout_width="119dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/eco_recicla_icono_temp"
-        android:layout_gravity="center"
-        />
-    <TextView
-        android:id="@+id/titulos1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:text="Registro de Reciclaje" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
         android:orientation="vertical"
-        android:layout_marginTop="16dp"
-        >
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/imgIcono2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/eco_recicla_completo" />
+
+        <TextView
+            android:id="@+id/titulos1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Registro de Reciclaje" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
             >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+
+                    >
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageButton
+                            android:id="@+id/btnPapelRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@android:drawable/screen_background_light"
+                            android:backgroundTint="@color/verde2"
+                            android:src="@drawable/note_stack_fill0_wght400_grad0_opsz24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:backgroundTint="@color/verde2"
+                            android:text="Papel"
+                            android:textStyle="bold"
+                            android:textSize="14dp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageButton
+                            android:id="@+id/btnPlasticoRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@android:drawable/screen_background_light"
+                            android:src="@drawable/local_dining_fill0_wght400_grad0_opsz24"
+                            android:backgroundTint="@color/verde2"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Plasticos"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:backgroundTint="@color/verde2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <ImageButton
+                            android:id="@+id/btnElectronicosRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@android:drawable/screen_background_light"
+                            android:src="@drawable/devices_other_fill0_wght400_grad0_opsz24"
+                            android:backgroundTint="@color/verde2"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Electronicos"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:backgroundTint="@color/verde2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+                        <ImageButton
+                            android:id="@+id/btnAceiteRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@android:drawable/screen_background_light"
+                            android:src="@drawable/format_color_fill_fill0_wght400_grad0_opsz24"
+                            android:backgroundTint="@color/verde2"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="aceite"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/verde2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+                        <ImageButton
+                            android:id="@+id/btnVidrioRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@android:drawable/screen_background_light"
+                            android:src="@drawable/liquor_fill0_wght400_grad0_opsz24"
+                            android:backgroundTint="@color/verde2"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Vidrio"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/verde2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+                        <ImageButton
+                            android:id="@+id/btnOrganicosRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@android:drawable/screen_background_light"
+                            android:src="@drawable/compost_fill0_wght400_grad0_opsz24"
+                            android:backgroundTint="@color/verde2"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Organicos"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/verde2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+                        <ImageButton
+                            android:id="@+id/btnBateriasRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@android:drawable/screen_background_light"
+                            android:src="@drawable/battery_full_fill0_wght400_grad0_opsz24"
+                            android:backgroundTint="@color/verde2"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Baterias"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/verde2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp">
+                        <ImageButton
+                            android:id="@+id/btnTextilesRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@android:drawable/screen_background_light"
+                            android:src="@drawable/styler_fill0_wght400_grad0_opsz24"
+                            android:backgroundTint="@color/verde2"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Textiles"
+                            android:backgroundTint="@color/verde2"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            />
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selección"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+
+                />
+
             <FrameLayout
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_weight="1"
+                android:background="@color/verdeFondo"
+                android:orientation="vertical"
+                android:layout_gravity="center"
                 android:padding="5dp"
 
                 >
-
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/verde2"
                     android:padding="10dp"
                     app:cardCornerRadius="10dp">
 
-                    <ImageButton
-                        android:id="@+id/btnPapelRegistro"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
+
+                    <ImageView
+                        android:id="@+id/iconRegistro"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
                         android:background="@android:drawable/screen_background_light"
-                        android:backgroundTint="@color/verde2"
-                        android:src="@drawable/note_stack_fill0_wght400_grad0_opsz24" />
+                        android:src="@drawable/do_not_disturb_on_fill0_wght400_grad0_opsz24"
+                        android:backgroundTint="@color/verde2"/>
 
                     <TextView
+                        android:id="@+id/tvSeleccionRegistro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="28sp"
+                        android:backgroundTint="@color/verde2"
+                        android:text="Ninguno"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="0.8"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Cantidad"
+                    android:textSize="17sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/cantidadTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:text="0"
+                    android:textSize="20sp"
+
+                    />
+
+                <SeekBar
+                    android:id="@+id/cantidad_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+
+                    android:progress="0" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="11dp"
+                    >
+                    <RadioButton
+                        android:id="@+id/radioBtnLibras"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="1"
+
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioBtnKilos"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="1"
+
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioBtnLitros"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioBtnItems"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+
+
+                        />
+
+                </RadioGroup>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Libras"
+                            android:textAlignment="center"
+                            android:textSize="13sp"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="kilos"
+                            android:textAlignment="center"
+                            android:textSize="13sp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Litros"
+                            android:textAlignment="center"
+                            android:textSize="13sp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Items"
+                            android:textAlignment="center"
+                            android:textSize="13sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="fecha"
+                    android:textSize="17sp"
+
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/mesTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="5dp"
-                        android:backgroundTint="@color/verde2"
-                        android:text="Papel"
-                        android:textSize="13dp" />
+                        android:text="Mes"
+                        android:textSize="15sp"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        />
 
-                </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/yearTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Año"
+                        android:textSize="15sp"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        />
+                </LinearLayout>
 
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                >
-                <androidx.cardview.widget.CardView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/black"
-                    android:padding="10dp"
-                    app:cardCornerRadius="10dp">
-
-                <ImageButton
-                    android:id="@+id/btnPlasticoRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@android:drawable/screen_background_light"
-                    android:src="@drawable/local_dining_fill0_wght400_grad0_opsz24"
-                    android:backgroundTint="@color/verde2"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Plasticos"
-                    android:textSize="13dp"
-                    android:backgroundTint="@color/verde2"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/black"
-                    android:padding="10dp"
-                    app:cardCornerRadius="10dp">
-
-                <ImageButton
-                    android:id="@+id/btnElectronicosRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@android:drawable/screen_background_light"
-                    android:src="@drawable/devices_other_fill0_wght400_grad0_opsz24"
-                    android:backgroundTint="@color/verde2"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Electronicos"
-                    android:textSize="13dp"
-                    android:backgroundTint="@color/verde2"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/black"
-                    android:padding="10dp"
-                    app:cardCornerRadius="10dp">
-                <ImageButton
-                    android:id="@+id/btnAceiteRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@android:drawable/screen_background_light"
-                    android:src="@drawable/format_color_fill_fill0_wght400_grad0_opsz24"
-                    android:backgroundTint="@color/verde2"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="aceite"
-                    android:textSize="13dp"
-                    android:backgroundTint="@color/verde2"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/black"
-                    android:padding="10dp"
-                    app:cardCornerRadius="10dp">
-                <ImageButton
-                    android:id="@+id/btnVidrioRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@android:drawable/screen_background_light"
-                    android:src="@drawable/liquor_fill0_wght400_grad0_opsz24"
-                    android:backgroundTint="@color/verde2"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vidrio"
-                    android:textSize="13dp"
-                    android:backgroundTint="@color/verde2"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/black"
-                    android:padding="10dp"
-                    app:cardCornerRadius="10dp">
-                <ImageButton
-                    android:id="@+id/btnOrganicosRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@android:drawable/screen_background_light"
-                    android:src="@drawable/compost_fill0_wght400_grad0_opsz24"
-                    android:backgroundTint="@color/verde2"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Organicos"
-                    android:textSize="13dp"
-                    android:backgroundTint="@color/verde2"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/black"
-                    android:padding="10dp"
-                    app:cardCornerRadius="10dp">
-                <ImageButton
-                    android:id="@+id/btnBateriasRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@android:drawable/screen_background_light"
-                    android:src="@drawable/battery_full_fill0_wght400_grad0_opsz24"
-                    android:backgroundTint="@color/verde2"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Baterias"
-                    android:textSize="13dp"
-                    android:backgroundTint="@color/verde2"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:padding="5dp"
-                >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/black"
-                    android:padding="10dp"
-                    app:cardCornerRadius="10dp">
-                <ImageButton
-                    android:id="@+id/btnTextilesRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@android:drawable/screen_background_light"
-                    android:src="@drawable/styler_fill0_wght400_grad0_opsz24"
-                    android:backgroundTint="@color/verde2"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Textiles"
-                    android:backgroundTint="@color/verde2"
-                    android:textSize="13dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    />
-                </androidx.cardview.widget.CardView>
-            </FrameLayout>
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selección"
-            android:layout_gravity="center"
-            android:textSize="16sp"
-
-            />
-
-        <FrameLayout
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/verdeFondo"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:padding="5dp"
-
-            >
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/verde2"
-                android:padding="10dp"
-                app:cardCornerRadius="10dp">
-
-
-            <ImageView
-                android:id="@+id/iconRegistro"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@android:drawable/screen_background_light"
-                android:src="@drawable/do_not_disturb_on_fill0_wght400_grad0_opsz24"
-                android:backgroundTint="@color/verde2"/>
-
-                <TextView
-                    android:id="@+id/tvSeleccionRegistro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="28sp"
-                    android:backgroundTint="@color/verde2"
-                    android:text="Ninguno"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
-
-        </FrameLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingTop="10dp">
-
-
-
-        <LinearLayout
-            android:layout_width="160dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            android:orientation="vertical"
-
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Cantidad"
-                android:textSize="17sp"
-
-                />
-
-            <TextView
-                android:id="@+id/cantidadTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:paddingTop="10dp"
-                android:text="0"
-                android:textSize="20sp"
-
-                />
-
-            <SeekBar
-                android:id="@+id/cantidad_seekbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:max="7"
-                android:paddingTop="10dp"
-                android:progress="0" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="160dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="fecha"
-                android:textSize="17sp"
-
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-            <TextView
-                android:id="@+id/mesTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Mes"
-                android:textSize="15sp"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                />
-
-                <TextView
-                    android:id="@+id/yearTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Año"
-                    android:textSize="15sp"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/verdeFondo"
-                android:backgroundTint="@color/verdeFondo"
-                >
-                <com.shawnlin.numberpicker.NumberPicker
-                    android:id="@+id/timeSelektaMes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
-                    android:layout_centerInParent="true"
-                    app:np_dividerColor="#0000"
-                    app:np_height="180dp"
-                    app:np_max="12"
-                    app:np_min="1"
-                    app:np_selectedTextColor="#000"
-                    app:np_selectedTextSize="30dp"
-                    app:np_textColor="@color/black"
-                    app:np_textSize="15dp"
-                    app:np_value="0"
-                    app:np_wheelItemCount="5"
-                    app:np_width="64dp"
-                    android:layout_weight="1"
-
-                    tools:ignore="SpeakableTextPresentCheck" />
-                <com.shawnlin.numberpicker.NumberPicker
-                    android:id="@+id/timeSelektaYear"
                     android:background="@color/verdeFondo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
-                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/verdeFondo"
+                    >
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/timeSelektaMes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_centerInParent="true"
+                        app:np_dividerColor="#0000"
+                        app:np_height="180dp"
+                        app:np_max="12"
+                        app:np_min="1"
+                        app:np_selectedTextColor="#000"
+                        app:np_selectedTextSize="30dp"
+                        app:np_textColor="@color/black"
+                        app:np_textSize="15dp"
+                        app:np_value="0"
+                        app:np_wheelItemCount="5"
+                        app:np_width="64dp"
+                        android:layout_weight="1"
 
-                    app:np_dividerColor="#0000"
-                    app:np_height="180dp"
-                    app:np_max="99"
-                    app:np_min="23"
-                    app:np_selectedTextColor="#000"
-                    app:np_selectedTextSize="30dp"
-                    app:np_textColor="@color/black"
-                    app:np_textSize="15dp"
-                    app:np_value="0"
-                    app:np_wheelItemCount="5"
-                    app:np_width="64dp"
-                    android:layout_weight="1"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                        tools:ignore="SpeakableTextPresentCheck" />
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/timeSelektaYear"
+                        android:background="@color/verdeFondo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_centerInParent="true"
 
+                        app:np_dividerColor="#0000"
+                        app:np_height="180dp"
+                        app:np_max="99"
+                        app:np_min="23"
+                        app:np_selectedTextColor="#000"
+                        app:np_selectedTextSize="30dp"
+                        app:np_textColor="@color/black"
+                        app:np_textSize="15dp"
+                        app:np_value="0"
+                        app:np_wheelItemCount="5"
+                        app:np_width="64dp"
+                        android:layout_weight="1"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </LinearLayout>
             </LinearLayout>
+
+
         </LinearLayout>
 
+        <Button
+            android:id="@+id/buttonRegistrarReciclaje"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:onClick="lanzarSegundaActividad"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Registrar" />
 
     </LinearLayout>
 
 
 
 
-    <Button
-        android:id="@+id/buttonRegistrarReciclaje"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:onClick="lanzarSegundaActividad"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Registrar" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

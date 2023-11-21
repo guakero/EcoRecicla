@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="137dp"
         android:layout_height="205dp"
-        android:src="@drawable/eco_recicla"
+        android:src="@drawable/eco_recicla_c"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -1,19 +1,29 @@
 package com.dario.ecorecicla;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
+import android.preference.SwitchPreference;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class Home extends AppCompatActivity {
 
-
+    private Toolbar toolbar;
     public Button categorias;
     public Button registro;
     public Button estadisticas;
     public Button consejos;
+    public boolean loginStatus;
 
 
     @Override
@@ -26,6 +36,9 @@ public class Home extends AppCompatActivity {
         registro = findViewById(R.id.btnRegistro);
         estadisticas = findViewById(R.id.btnEstadisticas);
         consejos = findViewById(R.id.btnConsejos);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         categorias.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +67,42 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        PreferenceManager.setDefaultValues(this, R.xml.ajustes, false);
+        loadPreferences();
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu1, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+            int id = (item.getItemId());
+            if(id == R.id.logOut1){
+                Intent intent = new Intent(this, Ajustes.class);
+                startActivity(intent );
+                return true;
+            }else{
+                return super.onOptionsItemSelected(item);
+            }
+    }
+    public void loadPreferences (){
+        SharedPreferences preferenicas= PreferenceManager.getDefaultSharedPreferences(this);
+        loginStatus = preferenicas.getBoolean("Log Out status",false);
+        if(!loginStatus){
+            Intent intent = new Intent(this, Welcome.class);
+            startActivity(intent);
+        }
+        System.out.println(loginStatus);
+    }
+
+    public void onRestart()
+    {
+        super.onRestart();
+        loadPreferences();
+    }
 
 }

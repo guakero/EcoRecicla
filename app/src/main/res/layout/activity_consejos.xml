@@ -6,14 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/verdeFondo"
+    android:backgroundTint="@color/verdeFondo"
+    >
 
   <ImageView
       android:id="@+id/imgIcono"
-      android:layout_width="119dp"
-      android:layout_height="71dp"
+      android:layout_width="80dp"
+      android:layout_height="80dp"
+      android:src="@drawable/eco_recicla_completo"
       android:layout_marginTop="40dp"
-      android:src="@drawable/eco_recicla_icono_temp"
       android:layout_gravity="center"
      />
   <TextView

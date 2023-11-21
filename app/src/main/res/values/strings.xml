@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">EcoRecicla</string>
     <string name="fechas">2023,2024</string>
+    <string-array name="SignOut_values">
+        <item>Log Out</item>
+
+    </string-array>
+    <string-array name="SignOut_keys">
+        <item>Log Out</item>
+
+    </string-array>
 </resources>

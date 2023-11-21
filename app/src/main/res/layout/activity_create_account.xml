@@ -9,9 +9,9 @@
     android:backgroundTint="@color/verdeFondo">
 
     <ImageView
-        android:layout_width="137dp"
-        android:layout_height="205dp"
-        android:src="@drawable/eco_recicla"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:src="@drawable/eco_recicla_c"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -82,7 +82,7 @@
     <Button
         android:id="@+id/btnCreateAccount"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:text="Registrarse"
         android:textColor="@color/white"
         android:textSize="25dp"
