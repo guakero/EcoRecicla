@@ -3,13 +3,14 @@ package com.dario.ecorecicla;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.dario.ecorecicla.modelos.FileManager;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -52,7 +53,7 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
         barChart.setData(barData);
 
         // adding color to our bar data set.
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        barDataSet.setColors(ColorTemplate.getHoloBlue());
 
         // setting text color.
         barDataSet.setValueTextColor(Color.BLACK);
@@ -72,24 +73,46 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
 
     }
 
+
+
     private void getBarEntries() {
-        // creating a new array list
+        String nombreArchivo = "/"+ "Organicos" + ".txt";
+        // leemos los datos y los partimos por dada mes usando el reg ex "\n "
+        File file = FileManager.crearAbrirArchivo(getFilesDir(),nombreArchivo);
+        String datos = FileManager.LeerArchivo(file);
+        String[] datosePorMes = datos.split("\n ");
+
+
+        // variables para el array
+        float x = 1f;
+
+        int index = 0;
+        float cantidad = 0;
+        String[] datosMeslist;
+
+        // se crea el array para los datos de la grafica
         barEntriesArrayList = new ArrayList<>();
 
-        // adding new entry to our array list with bar
-        // entry and passing x and y axis value to it.
-        barEntriesArrayList.add(new BarEntry(1f, 100));
-        barEntriesArrayList.add(new BarEntry(2f, 0));
-        barEntriesArrayList.add(new BarEntry(3f, 0));
-        barEntriesArrayList.add(new BarEntry(4f, 0));
-        barEntriesArrayList.add(new BarEntry(5f, 0));
-        barEntriesArrayList.add(new BarEntry(7f, 0));
-        barEntriesArrayList.add(new BarEntry(8f, 0));
-        barEntriesArrayList.add(new BarEntry(9f, 0));
-        barEntriesArrayList.add(new BarEntry(10f, 0));
-        barEntriesArrayList.add(new BarEntry(11f, 0));
-        barEntriesArrayList.add(new BarEntry(12f, 0));
-        barEntriesArrayList.add(new BarEntry(6f, 0));
-    }
+        while (x < 13f) {
+            // obtenemos el index de los datospormes para ponerlos en 0 si no existen
+            int idexTotales = datosePorMes.length;
 
+            if (idexTotales<x){
+                cantidad = 0;
+            }else{
+                // partimos de cada mes en un arreglo para sacar la cantidad y la castiamos a float
+                datosMeslist = datosePorMes[index].split(", ");
+                cantidad = Float.parseFloat(datosMeslist[3]);
+            }
+
+
+
+            x += 1f;
+            index +=1;
+            // adding new entry to our array list with bar
+            // entry and passing x and y axis value to it.
+            barEntriesArrayList.add(new BarEntry(x, cantidad));
+
+        }
+    }
 }

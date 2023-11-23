@@ -11,6 +11,13 @@ import java.io.IOException;
 
 /**
  * File manager crea lee y validad datos de archivo
+ * crearAbrirArchivo
+ * EscrituraArchivo
+ * LeerArchivo
+ * modificarArchivo
+ * VerificarExistenciaArchivo
+ * SobreEscribirArchivo
+ * ValidarExistenciadeDato
  */
 public  class FileManager {
 
