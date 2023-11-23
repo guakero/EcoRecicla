@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import java.io.File;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import com.dario.ecorecicla.modelos.FileManager;
+import com.dario.ecorecicla.modelos.YearClass;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -62,20 +64,14 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
         barDataSet.setValueTextSize(15f);
         barChart.getDescription().setEnabled(false);
 
-        List<String> data = new ArrayList<>();
-        data.add("Organiscos");
-        data.add("enero");
-        data.add("10lilos");
-
-        List<Entry> entries = new ArrayList<Entry>();
-
-
 
     }
 
 
 
     private void getBarEntries() {
+        List<String> yearsList = new ArrayList<>();
+        List<YearClass> yearsClasList = new ArrayList<>();
         String nombreArchivo = "/"+ "Organicos" + ".txt";
         // leemos los datos y los partimos por dada mes usando el reg ex "\n "
         File file = FileManager.crearAbrirArchivo(getFilesDir(),nombreArchivo);
@@ -87,23 +83,34 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
         float x = 1f;
 
         int index = 0;
-        float cantidad = 0;
+//        float cantidad = 0;
         String[] datosMeslist;
 
         // se crea el array para los datos de la grafica
         barEntriesArrayList = new ArrayList<>();
 
         while (x < 13f) {
-            // obtenemos el index de los datospormes para ponerlos en 0 si no existen
-            int idexTotales = datosePorMes.length;
 
-            if (idexTotales<x){
-                cantidad = 0;
-            }else{
-                // partimos de cada mes en un arreglo para sacar la cantidad y la castiamos a float
-                datosMeslist = datosePorMes[index].split(", ");
-                cantidad = Float.parseFloat(datosMeslist[3]);
+            // partimos de cada mes en un arreglo para sacar la cantidad y la castiamos a float
+            datosMeslist = datosePorMes[index].split(", ");
+            cantidad = Float.parseFloat(datosMeslist[3]);
+
+            // si no existe el año en la lista años creamos objeto años y los agregamos a listas
+            if(!yearsList.contains(datosMeslist[2])){
+                YearClass newyear = new YearClass(datosMeslist[2],datosMeslist);
+                yearsList.add(datosMeslist[2]);
+                yearsClasList.add(newyear);
+            } else {
+                int indexy = 0;
+                for (String yearIterado :yearsList){
+                    if(datosMeslist[2].equals(yearsClasList.get(indexy).get_year())){
+                        yearsClasList.get(indexy).setmes(datosMeslist);
+                    }
+                    indexy =+1;
+                }
             }
+
+
 
 
 
