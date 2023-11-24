@@ -50,8 +50,9 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
         yearSeekBar = findViewById(R.id.years_seekbar);
         yearSeekBar.setProgress(2023);
 
-        // initializing variable for bar chart.
+        // inicializamos el componente
         barChart = findViewById(R.id.estadisticaOrganicos);
+        // si invoca la funcio para crear la grafica
         crearBarchar();
 
 
@@ -61,9 +62,11 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
 
                 yearsTv.setText(String.valueOf(progress));
                 indexYear += 1;
-//                printarBarras(yearsClasList);
+                //enviamos a la funcion que borra los datos
                 clear();
+                //se limpia el barchar
                 barChart.clear();
+                //se vuelve a cargar con el nuevo indice
                 crearBarchar();
             }
 
@@ -89,7 +92,6 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
         File file = FileManager.crearAbrirArchivo(getFilesDir(), nombreArchivo);
         String datos = FileManager.LeerArchivo(file);
         String[] datosPorMeses = datos.split("\n ");
-
 
         String[] datosMeslist;
 
@@ -158,9 +160,7 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
         int index = 0;
 
         while (x < 13f) {
-
             x += 1f;
-            cantidad += 1;
             index += 1;
             // adding new entry to our array list with bar
             // entry and passing x and y axis value to it.
@@ -170,8 +170,7 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
     }
 
     private void crearBarchar(){
-//        clear();
-//        barChart.clear();
+
         getBarEntries();
         barDataSet = new BarDataSet(barEntriesArrayList, "Cantidad por mes");
 
