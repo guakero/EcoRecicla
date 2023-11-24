@@ -24,4 +24,26 @@ public class YearClass {
     public void setmes(String[] datosMesList){
         _datosPorMes.add(datosMesList);
     }
+
+    public ArrayList getCantidadesPorYear (){
+
+        ArrayList<Float> cantidades= new ArrayList<>(12);
+
+            for (int i = 0; i < 13; i++){
+                        cantidades.add(i,0f);
+            }
+
+        for (String [] datosMesIterado :_datosPorMes){
+                cantidades.set(Integer.parseInt(datosMesIterado[1]), Float.parseFloat(datosMesIterado[3]));
+        }
+
+
+
+
+
+
+        return cantidades;
+    }
+
+
 }

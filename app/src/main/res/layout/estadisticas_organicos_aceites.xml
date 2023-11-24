@@ -50,24 +50,25 @@
 
 
                 <TextView
-                    android:id="@+id/horasDiariasTV"
+                    android:id="@+id/years_Tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingTop="5dp"
-                    android:text="Enero"
+                    android:text="2023"
                     android:textSize="20sp"
                     android:backgroundTint="@color/verdeFondo"
                     />
 
                 <SeekBar
-                    android:id="@+id/horas_seekbar"
+                    android:id="@+id/years_seekbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:max="12"
+                    android:max="2033"
+                    android:min="2021"
                     android:paddingTop="10dp"
-                    android:progress="0" />
+                    android:progress="2023" />
             </LinearLayout>
 
         </LinearLayout>
