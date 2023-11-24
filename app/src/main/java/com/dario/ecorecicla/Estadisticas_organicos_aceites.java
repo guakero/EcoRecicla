@@ -10,12 +10,14 @@ import java.util.List;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.dario.ecorecicla.modelos.FileManager;
 import com.dario.ecorecicla.modelos.YearClass;
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -40,11 +42,15 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
     private TextView yearsTv;
     private int indexYear = 0;
     private List<YearClass> yearsClasList = new ArrayList<>();
+    int numberOfYearsRegistred;
+    private TextView textViewPromedio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.estadisticas_organicos_aceites);
+
+        textViewPromedio = findViewById(R.id.promedioTextView);
 
         yearsTv = findViewById(R.id.years_Tv);
         yearSeekBar = findViewById(R.id.years_seekbar);
@@ -54,18 +60,17 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
         barChart = findViewById(R.id.estadisticaOrganicos);
         // si invoca la funcio para crear la grafica
         crearBarchar();
-
+        yearSeekBar.setMax(2022+numberOfYearsRegistred);
 
         yearSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
                 yearsTv.setText(String.valueOf(progress));
-                indexYear += 1;
+                // el idexYera nos indica en print barras que año imprimir
+                indexYear = progress -2023;
                 //enviamos a la funcion que borra los datos
                 clear();
-                //se limpia el barchar
-                barChart.clear();
                 //se vuelve a cargar con el nuevo indice
                 crearBarchar();
             }
@@ -85,37 +90,37 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
 
     private void getBarEntries() {
 
-        List<String> yearsList = new ArrayList<>();
-
-        String nombreArchivo = "/" + "Organicos" + ".txt";
-        // leemos los datos y los partimos por dada mes usando el reg ex "\n "
-        File file = FileManager.crearAbrirArchivo(getFilesDir(), nombreArchivo);
-        String datos = FileManager.LeerArchivo(file);
-        String[] datosPorMeses = datos.split("\n ");
-
-        String[] datosMeslist;
-
         // se crea el array para los datos de la grafica
         barEntriesArrayList = new ArrayList<>();
+        // solo si no hemo
+        if (yearsClasList.isEmpty()){    
+
+            List<String> yearsList = new ArrayList<>();
+            String nombreArchivo = "/" + "Organicos" + ".txt";
+            // leemos los datos y los partimos por dada mes usando el reg ex "\n "
+            File file = FileManager.crearAbrirArchivo(getFilesDir(), nombreArchivo);
+            String datos = FileManager.LeerArchivo(file);
+            String[] datosPorMeses = datos.split("\n ");
+
+            String[] datosMeslist;
 
 
-        for (String datoMes : datosPorMeses) {
-            // partimos de cada mes en un arreglo para sacar la cantidad y la castiamos a float
-            datosMeslist = datoMes.split(", ");
-            /*            cantidad = Float.parseFloat(datosMeslist[3]);*/
+            for (String datoMes : datosPorMeses) {
+                // partimos de cada mes en un arreglo para sacar la cantidad y la castiamos a float
+                datosMeslist = datoMes.split(", ");
 
-            // si no existe el año en la lista años creamos objeto años y los agregamos a listas
-            if (datosMeslist.length < 2) {
-                // saltamos un bug que genera espacio en la data
-            } else if (!yearsList.contains(datosMeslist[2])) {
-                YearClass newyear = new YearClass(datosMeslist[2], datosMeslist);
-                yearsList.add(datosMeslist[2]);
-                yearsClasList.add(newyear);
-                // si existe solo agregamos el mes al año ya existente
-            } else {
-                int indexy = 0;
-                // por cada año en la lista de años ponemos el dato del mes en el año correspondiente
-                for (String yearIterado : yearsList) {
+                // si no existe el año en la lista años creamos objeto años y los agregamos a listas
+                if (datosMeslist.length < 2) {
+                    // saltamos un bug que genera espacio en la data
+                } else if (!yearsList.contains(datosMeslist[2])) {
+                    YearClass newyear = new YearClass(datosMeslist[2], datosMeslist);
+                    yearsList.add(datosMeslist[2]);
+                    yearsClasList.add(newyear);
+                    // si existe solo agregamos el mes al año ya existente
+                } else {
+                    int indexy = 0;
+                    // por cada año en la lista de años ponemos el dato del mes en el año correspondiente
+                    for (String yearIterado : yearsList) {
                     if (datosMeslist[2].equals(yearsClasList.get(indexy).get_year())) {
                         yearsClasList.get(indexy).setmes(datosMeslist);
                     }
@@ -125,6 +130,10 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
 
         }
 
+
+        }
+
+
         // variables para el array
         printarBarras(yearsClasList);
 
@@ -132,9 +141,12 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
 
 
     private void printarBarras(List<YearClass> yearsClasList) {
+        String promedio;
         barEntriesArrayList.clear();
-        int numberOfYearsRegistred = yearsClasList.size();
+        numberOfYearsRegistred = yearsClasList.size();
         YearClass datosAnualesList = yearsClasList.get(indexYear);
+        promedio = datosAnualesList.getPromedio();
+        textViewPromedio.setText(promedio);
         ArrayList<Float> cantidadesYear = new ArrayList<>(datosAnualesList.getCantidadesPorYear());
 
         float x = 0f;
@@ -155,18 +167,8 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
 
     private void clear() {
         barEntriesArrayList.clear();
-        float x = 0f;
-        float cantidad = 0;
-        int index = 0;
-
-        while (x < 13f) {
-            x += 1f;
-            index += 1;
-            // adding new entry to our array list with bar
-            // entry and passing x and y axis value to it.
-            barEntriesArrayList.add(new BarEntry(x, cantidad));
-
-        }
+        //se limpia el barchar
+        barChart.clear();
     }
 
     private void crearBarchar(){
@@ -190,6 +192,9 @@ public class Estadisticas_organicos_aceites extends AppCompatActivity {
         // setting text size
         barDataSet.setValueTextSize(15f);
         barChart.getDescription().setEnabled(false);
-
+        Legend legend = barChart.getLegend();
+        legend.setFormSize(10f);
     }
+
 }
+

@@ -37,13 +37,23 @@ public class YearClass {
                 cantidades.set(Integer.parseInt(datosMesIterado[1]), Float.parseFloat(datosMesIterado[3]));
         }
 
-
-
-
-
-
         return cantidades;
     }
+
+    public String getPromedio(){
+            int sumaMeses = 0;
+            int promedio;
+            String unidad ="";
+        for (String[] datosmes :_datosPorMes) {
+            sumaMeses += Integer.parseInt(datosmes[3]);
+            unidad = datosmes[4];
+        }
+
+            promedio = sumaMeses/_datosPorMes.size();
+            String log = String.valueOf(sumaMeses)+"/"+String.valueOf(_datosPorMes.size());
+            Herramientas.logpy(log);
+            return String.valueOf(promedio) +" "+ unidad;
+        }
 
 
 }
