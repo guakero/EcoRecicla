@@ -99,7 +99,7 @@ public  class FileManager {
             String line;
 
             while ((line = bufferedReader.readLine())!= null) {
-                contenido.append(line).append("\n ");
+                contenido.append(line).append("\n\n ");
 
             }
             bufferedReader.close();
