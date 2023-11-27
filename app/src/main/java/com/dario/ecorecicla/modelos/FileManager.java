@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 // Android-added: Info about UTF-8 usage in filenames.
 
 /**
@@ -61,6 +63,7 @@ public  class FileManager {
     /**
      *recive el objeto file generado por la funcion crearAbrirArchivo
      * texto y retorna string con contenido
+     * tambien recibe InputStream
      */
     public static String LeerArchivo (File archivo){
         String lineReturn = "";
@@ -77,6 +80,30 @@ public  class FileManager {
             }
             bufferedReader.close();
             reader.close();
+            String archivoContenido = contenido.toString();
+            System.out.println(archivoContenido);
+            lineReturn = archivoContenido;
+        }catch (IOException ex){
+            ex.printStackTrace();
+
+        }
+        return lineReturn;
+
+    }
+    public static String LeerArchivo (InputStream inputStream){
+        String lineReturn = "";
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+            StringBuilder contenido =  new StringBuilder();
+            String line;
+
+            while ((line = bufferedReader.readLine())!= null) {
+                contenido.append(line).append("\n ");
+
+            }
+            bufferedReader.close();
+
             String archivoContenido = contenido.toString();
             System.out.println(archivoContenido);
             lineReturn = archivoContenido;

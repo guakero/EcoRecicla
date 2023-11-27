@@ -14,6 +14,9 @@ public class Estadisticas extends AppCompatActivity {
     public Button btnEstadisticasElectronicoBaterias;
     public Button btnEstadisticasOrganicosAceites;
 
+    public String material1;
+    public String material2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,32 +31,45 @@ public class Estadisticas extends AppCompatActivity {
         btnEstadisticasPapelyPlasticos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Estadisticas.this, Estadisticas_papel_plastico.class));
+                material1 = "Papel";
+                material2 = "Plasticos";
+                intentStadisticas(material1, material2);
             }
         });
 
         btnEstadisticasVidrioTextiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Estadisticas.this,Estadisticas_vidrio_textiles.class));
+                material1 = "Vidrio";
+                material2 = "Textiles";
+                intentStadisticas(material1, material2);
             }
         });
 
         btnEstadisticasElectronicoBaterias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Estadisticas.this, Equipos_electronicos_baterias.class));
+                material1 = "Electronicos";
+                material2 = "Baterias";
+                intentStadisticas(material1, material2);
             }
         });
 
         btnEstadisticasOrganicosAceites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Estadisticas.this, Estadisticas_organicos_aceites.class));
+                material1 = "Organicos";
+                material2 = "Aceite";
+                intentStadisticas(material1, material2);
             }
         });
+
+
     }
 
+    private void intentStadisticas(String material1, String material2) {
+        startActivity(new Intent(Estadisticas.this, Estadisticas_materiales.class).putExtra("material1",material1).putExtra("material2",material2));
+    }
 
 
 }

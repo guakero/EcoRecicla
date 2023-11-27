@@ -1,9 +1,11 @@
 package com.dario.ecorecicla;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -103,5 +105,26 @@ public class Home extends AppCompatActivity {
         super.onRestart();
         loadPreferences();
     }
+    @Override
+    public void onBackPressed() {
+        // Muestra un mensaje de confirmación
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
+        builder.setMessage("¿Desea cerrar la aplicación?")
+                .setPositiveButton("si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Cierra la aplicación
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // No hace nada
+            }
+        });
+
+        builder.show();
+    }
 }

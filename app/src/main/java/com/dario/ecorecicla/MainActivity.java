@@ -22,11 +22,12 @@ public class MainActivity extends AppCompatActivity {
         if(loginStatus){
             Intent intent = new Intent(this, Home.class);
             startActivity(intent);
-            System.out.println(loginStatus);
+            finish();
 
         }else {
             Intent intent = new Intent(this, Welcome.class);
             startActivity(intent);
+            finish();
         }
     }
 }

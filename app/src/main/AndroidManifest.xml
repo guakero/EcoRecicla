@@ -32,21 +32,10 @@
             android:name=".Ajustes"
             android:exported="false" />
         <activity
-            android:name=".Estadisticas_organicos_aceites"
+            android:name=".Estadisticas_materiales"
             android:exported="false"
             android:parentActivityName=".Estadisticas" />
-        <activity
-            android:name=".Estadisticas_vidrio_textiles"
-            android:exported="false"
-            android:parentActivityName=".Estadisticas" />
-        <activity
-            android:name=".Equipos_electronicos_baterias"
-            android:exported="false"
-            android:parentActivityName=".Estadisticas" />
-        <activity
-            android:name=".Estadisticas_papel_plastico"
-            android:exported="false"
-            android:parentActivityName=".Estadisticas" />
+
         <activity
             android:name=".Login"
             android:exported="false"
