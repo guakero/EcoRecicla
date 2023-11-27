@@ -63,10 +63,7 @@
         <activity
             android:name=".Categorias2"
             android:exported="false" />
-        <activity
-            android:name=".Categorias"
-            android:exported="false"
-            android:parentActivityName=".Home" />
+
         <activity
             android:name=".RegistroDeReciclaje"
             android:exported="false"

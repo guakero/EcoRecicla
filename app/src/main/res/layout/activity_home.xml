@@ -19,24 +19,6 @@
         />
 
     <Button
-        android:id="@+id/btnCategorias"
-        android:layout_width="350dp"
-        android:layout_height="55dp"
-        android:text="Categorias"
-        android:textColor="@color/verde"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:textAlignment="textStart"
-        android:backgroundTint="#A4F5AA"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="340dp"
-        style="?attr/materialButtonOutlinedStyle"
-        app:strokeColor="@color/verde"
-        />
-
-    <Button
         android:id="@+id/btnRegistro"
         android:layout_width="350dp"
         android:layout_height="55dp"
@@ -87,17 +69,6 @@
         android:layout_marginTop="560dp"
         style="?attr/materialButtonOutlinedStyle"
         app:strokeColor="@color/verde"/>
-
-    <ImageView
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/categories"
-        android:layout_marginTop="347dp"
-        android:background="#A4F5AA"
-        android:layout_marginLeft="240dp"/>
 
     <ImageView
         android:layout_width="35dp"

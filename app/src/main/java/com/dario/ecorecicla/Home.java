@@ -33,19 +33,14 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        categorias = findViewById(R.id.btnCategorias);
+
         registro = findViewById(R.id.btnRegistro);
         estadisticas = findViewById(R.id.btnEstadisticas);
         consejos = findViewById(R.id.btnConsejos);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        categorias.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Home.this, Categorias.class));
-            }
-        });
+
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

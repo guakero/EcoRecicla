@@ -331,65 +331,72 @@
       </LinearLayout>
     </LinearLayout>
 
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="18dp">
 
-        android:orientation="vertical"
-        android:paddingHorizontal="30dp">
+
+
       <androidx.cardview.widget.CardView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:backgroundTint="@color/verde2"
           android:padding="10dp"
           app:cardCornerRadius="10dp">
-      </androidx.cardview.widget.CardView>
-
-      <ImageView
-          android:id="@+id/imgViewConsejos"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:layout_gravity="center"
-          android:backgroundTint="@color/verde2"
-          android:src="@drawable/do_not_disturb_on_fill0_wght400_grad0_opsz24"
-
-          />
-
-      <TextView
-          android:id="@+id/tituloConsejos"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:backgroundTint="@color/verde2"
-          android:text="Seleccione material"
-          android:textAlignment="center"
-          android:textSize="20sp"
-          android:textStyle="bold"
-          android:layout_marginBottom="10dp"
-          />
-
-      <ScrollView
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:backgroundTint="@color/verde2">
-
-        <TextView
-            android:id="@+id/textViewConsejos"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="top"
+        <ImageView
+            android:id="@+id/imgViewConsejos"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
             android:backgroundTint="@color/verde2"
-            android:text=""
-            android:textAlignment="center"
-            android:textSize="15sp"
-            android:textStyle="normal"
+            android:src="@drawable/do_not_disturb_on_fill0_wght400_grad0_opsz24"
+            android:layout_marginTop="25dp"
 
             />
+        <TextView
+            android:id="@+id/tituloConsejos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/verde2"
+            android:text="Seleccione material"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            />
 
-      </ScrollView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/verde2"
+            android:layout_marginTop="85dp"
+            android:paddingHorizontal="10dp"
+            >
 
-    </LinearLayout>
+          <TextView
+              android:id="@+id/textViewConsejos"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="top"
+              android:backgroundTint="@color/verde2"
+              android:text="Selecione Material"
+              android:textAlignment="center"
+              android:textSize="15sp"
+              android:textStyle="normal"
+
+              />
+
+        </ScrollView>
+
+      </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    </FrameLayout>
   </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
