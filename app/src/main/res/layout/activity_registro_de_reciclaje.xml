@@ -20,7 +20,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/fondo_ecorcicla1_03"
+        >
         <ImageView
             android:id="@+id/imgIcono2"
             android:layout_width="80dp"
@@ -329,10 +331,11 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -518,7 +521,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Litros"
+                            android:text="MLitros"
                             android:textAlignment="center"
                             android:textSize="13sp"/>
 

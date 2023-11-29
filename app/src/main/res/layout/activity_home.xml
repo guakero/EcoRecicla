@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home"
-    android:background="@color/verdeFondo"
-    android:backgroundTint="@color/verdeFondo">
+    android:background="@drawable/fondo_ecorcicla1_03"
+    android:screenOrientation="landscape"
+    >
 
     <ImageView
         android:layout_width="137dp"
@@ -16,6 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="93dp"
+
         />
 
     <Button
@@ -89,7 +91,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/stats"
         android:layout_marginTop="487dp"
-        android:background="#A4F5AA"
+        android:background="@android:color/transparent"
         android:layout_marginLeft="240dp"/>
 
     <ImageView

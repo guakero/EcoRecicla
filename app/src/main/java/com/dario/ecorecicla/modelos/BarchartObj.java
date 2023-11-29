@@ -121,12 +121,12 @@ public class BarchartObj {
             float x = 0f;
             float cantidad = 0;
 
-            while (x < 13f) {
-                x += 1f;
+            while (x < 12f) {
                 cantidad = 0;
                 // adding new entry to our array list with bar
                 // entry and passing x and y axis value to it.
                 barEntriesArrayList.add(new BarEntry(x, cantidad));
+                x += 1f;
 
             }
         }else {
@@ -136,16 +136,16 @@ public class BarchartObj {
 
             float x = 0f;
             float cantidad = 0;
-            int index = 0;
+            int index = 1;
 
-            while (x < 13f) {
+            while (x < 12f) {
 
-                x += 1f;
                 cantidad = cantidadesYear.get(index);
-                index += 1;
                 // adding new entry to our array list with bar
                 // entry and passing x and y axis value to it.
                 barEntriesArrayList.add(new BarEntry(x, cantidad));
+                index += 1;
+                x += 1f;
 
             }
         }
@@ -162,13 +162,13 @@ public class BarchartObj {
         crearEmtyBarchar();
         float x = 0f;
         float cantidad = 0;
-        while (x < 13f) {
-            x += 1f;
+        while (x < 12f) {
+
             cantidad = 0;
             // adding new entry to our array list with bar
             // entry and passing x and y axis value to it.
             barEntriesArrayList.add(new BarEntry(x, cantidad));
-
+            x += 1f;
         }
 
     }

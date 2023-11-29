@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Welcome"
-    android:background="@color/verdeFondo"
-    android:backgroundTint="@color/verdeFondo">
+    android:background="@drawable/fondo_ecorcicla1_03"
+    >
 
 
     <ImageView
@@ -31,6 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="337dp"
+        android:background="@android:color/transparent"
         />
 
     <TextView
@@ -75,7 +76,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="520dp"/>
+        android:layout_marginTop="520dp"
+        android:background="@android:color/transparent"
+        />
 
     <Button
         android:id="@+id/iniciarSesionBtn"

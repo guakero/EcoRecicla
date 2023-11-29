@@ -41,12 +41,12 @@ public class Welcome extends AppCompatActivity {
     private void lanzarRegistrarse() {
         Intent intent = new Intent(this, CreateAccount.class);
         startActivity(intent);
-
+        finish();
     }
 
     private void lanzarIniciarSesion() {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
-
+        finish();
     }
 }
