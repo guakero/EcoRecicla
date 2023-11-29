@@ -144,6 +144,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 seleccionRegistroTV.setText("Papel");
                 imageViewIcon.setImageResource(R.drawable.note_stack_fill0_wght400_grad0_opsz24);
                 radioButtonLibras.setChecked(true);
+                unidad = "Libras";
             }
         });
 
@@ -153,6 +154,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 seleccionRegistroTV.setText("Plasticos");
                 imageViewIcon.setImageResource(R.drawable.local_dining_fill0_wght400_grad0_opsz24);
                 radioButtonLibras.setChecked(true);
+                unidad = "Libras";
             }
         });
 
@@ -162,6 +164,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 seleccionRegistroTV.setText("Electronicos");
                 imageViewIcon.setImageResource(R.drawable.devices_other_fill0_wght400_grad0_opsz24);
                 radioButtonItems.setChecked(true);
+                unidad = "Items";
             }
         });
 
@@ -171,6 +174,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 seleccionRegistroTV.setText("Aceite");
                 imageViewIcon.setImageResource(R.drawable.format_color_fill_fill0_wght400_grad0_opsz24);
                 radioButtonLitros.setChecked(true);
+                unidad = "MLitros";
             }
         });
 
@@ -180,6 +184,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 seleccionRegistroTV.setText("Vidrio");
                 imageViewIcon.setImageResource(R.drawable.liquor_fill0_wght400_grad0_opsz24);
                 radioButtonLibras.setChecked(true);
+                unidad = "Libras";
 
             }
         });
@@ -190,6 +195,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 seleccionRegistroTV.setText("Organicos");
                 imageViewIcon.setImageResource(R.drawable.compost_fill0_wght400_grad0_opsz24);
                 radioButtonLibras.setChecked(true);
+                unidad = "Libras";
             }
         });
 
@@ -199,6 +205,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 seleccionRegistroTV.setText("Baterias");
                 imageViewIcon.setImageResource(R.drawable.battery_full_fill0_wght400_grad0_opsz24);
                 radioButtonItems.setChecked(true);
+                unidad = "Items";
             }
         });
 
@@ -208,6 +215,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 seleccionRegistroTV.setText("Textiles");
                 imageViewIcon.setImageResource(R.drawable.styler_fill0_wght400_grad0_opsz24);
                 radioButtonItems.setChecked(true);
+                unidad = "Items";
             }
         });
 
