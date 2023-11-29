@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/verdeFondo"
-    android:backgroundTint="@color/verdeFondo"
+    android:background="@drawable/fondo_ecorcicla1_03"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".MainActivity">

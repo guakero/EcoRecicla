@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Estadisticas_materiales"
     android:orientation="vertical"
+    android:background="@drawable/fondo_ecorcicla1_03"
     >
     <ImageView
         android:id="@+id/imgIcono2"
@@ -37,6 +38,7 @@
         android:orientation="vertical"
         android:layout_marginTop="10dp"
         android:paddingHorizontal="40dp"
+        android:background="@android:color/transparent"
         >
         <FrameLayout
             android:layout_width="match_parent"

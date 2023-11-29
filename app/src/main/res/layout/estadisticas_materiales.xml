@@ -7,6 +7,7 @@
     tools:context=".Estadisticas_materiales"
     android:orientation="vertical"
     android:paddingHorizontal="10dp"
+    android:background="@drawable/fondo_ecorcicla1_03"
     >
     <ImageView
         android:id="@+id/imgIcono2"
