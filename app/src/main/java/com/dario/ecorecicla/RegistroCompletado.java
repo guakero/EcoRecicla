@@ -6,32 +6,36 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
 import android.view.View;
 import android.widget.Button;
+
+import com.dario.ecorecicla.modelos.Herramientas;
 
 public class RegistroCompletado extends AppCompatActivity {
 
     public boolean loginStatus;
     public Button btnHome;
+    private Bundle bundle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_completado);
+        // se obtiene el login status de shared preferences
+        loginStatus = Herramientas.getLoginStatus(this);
 
-        // se genera el objeto preferencias de tipo shared preferences
-        SharedPreferences preferencias= PreferenceManager.getDefaultSharedPreferences(this);
-        loginStatus = preferencias.getBoolean("Log Out status",false);
-        // se genera un objeto editor de shared preferences para editarlas en el boton de abajo
-        SharedPreferences.Editor editor = preferencias.edit();
+
 
         btnHome = findViewById(R.id.btnHome);
 
+        bundle = getIntent().getExtras();
+        String user = bundle.getString("user");
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editor.putBoolean("Log Out status", true);
-                editor.apply();
-                Intent intent = new Intent(RegistroCompletado.this, Home.class);
+                Herramientas.editPreferences(RegistroCompletado.this ,user,true);
+
+                 Intent intent = new Intent(RegistroCompletado.this, Home.class);
                 startActivity(intent);
                 finish();
             }

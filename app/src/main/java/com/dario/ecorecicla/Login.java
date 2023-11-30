@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.dario.ecorecicla.modelos.FileManager;
+import com.dario.ecorecicla.modelos.Herramientas;
 
 public class Login extends AppCompatActivity {
     public Button iniciarSesionBtn;
@@ -25,11 +26,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        // se genera el objeto preferencias de tipo shared preferences
-        SharedPreferences preferencias= PreferenceManager.getDefaultSharedPreferences(this);
-        loginStatus = preferencias.getBoolean("Log Out status",false);
-        // se genera un objeto editor de shared preferences para editarlas en el boton de abajo
-        SharedPreferences.Editor editor = preferencias.edit();
 
         iniciarSesionBtn = findViewById(R.id.btnIniciarSesion);
         editTextNombreLogin = findViewById(R.id.usuarioLogin);
@@ -45,8 +41,9 @@ public class Login extends AppCompatActivity {
                 if (FileManager.VerificarExistenciaArchivo(getFilesDir(),nombreArchivo)){
                     //validacion del psw
                     if (FileManager.ValidarExistenciadeDato(getFilesDir(),nombreArchivo,pswLoginInput)){
-                        editor.putBoolean("Log Out status", true);
-                        editor.apply();
+                        // cambiamos el loginStatus y el user en shared preferences
+                        Herramientas.editPreferences(Login.this,usuarioInput,true);
+
                         startActivity(new Intent(Login.this, Home.class));
                         finish();
                     }else{

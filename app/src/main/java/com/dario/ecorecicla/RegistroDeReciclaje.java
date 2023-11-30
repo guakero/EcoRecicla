@@ -6,9 +6,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dario.ecorecicla.modelos.FileManager;
+import com.dario.ecorecicla.modelos.User;
 import com.shawnlin.numberpicker.NumberPicker;
 
 import com.dario.ecorecicla.modelos.Materiales;
@@ -53,6 +57,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
     private RadioButton radioButtonKilos;
     private RadioButton radioButtonLitros;
     private RadioButton radioButtonItems;
+    private String user;
 
 
     @Override
@@ -80,7 +85,8 @@ public class RegistroDeReciclaje extends AppCompatActivity {
         radioButtonLitros = findViewById(R.id.radioBtnLitros);
         radioButtonItems = findViewById(R.id.radioBtnItems);
 
-
+        SharedPreferences preferencias= PreferenceManager.getDefaultSharedPreferences(this);
+        user = preferencias.getString("user","");
 
 
         numberPickerMes.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
@@ -126,9 +132,6 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 // validar selección de material
                 if (materialStr.equals("Ninguno")){
                     String alerta = "Por favor seleccione material de reciclaje";
-                    alertDialog(alerta, materialStr);
-                } else if (unidad == null){
-                    String alerta = "Por favor seleccione unidad de medida";
                     alertDialog(alerta, materialStr);
                 }
                 else{
@@ -250,7 +253,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
     private void guardarDatos(String materialStr, int mes, int year, int cantidad) {
         String alerta = "";
         // creamos objeto material con el tipo seleccionado
-        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad);
+        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad, user);
         // guardamos datos y obtenemos el status de guardado
         String savestatus = Materiales.guardarDatos(getFilesDir(), material);
         // printiamos resultado
@@ -288,7 +291,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Acción al presionar el botón Aceptar
-                        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad);
+                        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad, user);
                         // guardamos datos y obtenemos el status de guardado
                         Materiales.sobrescribirDatos(getFilesDir(), material);
                         leerDatosGuardados(materialStr);
@@ -311,11 +314,17 @@ public class RegistroDeReciclaje extends AppCompatActivity {
     }
 
     private void leerDatosGuardados (String material){
-        String nombreArchivo = "/"+"Datos"+material+".txt";
+
+        String nombreArchivo = "/"+"Datos"+material+"_"+user+".txt";
 
         File fileInput = FileManager.crearAbrirArchivo(getFilesDir(),nombreArchivo);
         String datosLeidos = FileManager.LeerArchivo(fileInput);
         System.out.println(datosLeidos);
 
+
     }
+
+
+
+
 }

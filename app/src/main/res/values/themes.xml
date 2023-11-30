@@ -5,10 +5,7 @@
         <item name="colorPrimary">@color/verde</item>
         <item name="android:background">@color/verdeFondo</item>
         <item name="android:textColor">@color/verdeFuentes</item>
-
     </style>
 
     <style name="Theme.EcoRecicla" parent="Base.Theme.EcoRecicla" />
-    
-
 </resources>

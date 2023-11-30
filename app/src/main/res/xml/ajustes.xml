@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="Ajustes">
+        <Preference
+            android:title="@string/tituloPreferencias"
+            android:icon="@drawable/ic_action_user"
+            android:key="user"
+            android:defaultValue=""
 
+            />
         <SwitchPreference
             android:key="Log Out status"
             android:title="Log out"
