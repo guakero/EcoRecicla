@@ -53,8 +53,6 @@ public class Herramientas {
 
     public static void setPreferenceUserIcon(Context context) {
         String usuario = PreferenceManager.getDefaultSharedPreferencesName(context);
-        PreferenceScreen preferenceScreen = (PreferenceScreen)
-        };
-        logpy("las preferencias son "+usuario);
+
     }
 }

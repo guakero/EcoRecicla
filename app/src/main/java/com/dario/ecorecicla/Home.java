@@ -99,8 +99,7 @@ public class Home extends AppCompatActivity {
 
         }else{
             Herramientas.setPreferenceUserIcon(Home.this);
-            findViewById(R.id.ajustes);
-            PreferenceScreen preferenceScreen  = findViewById(R.xml.ajustes);
+            // aca quiero ver si puedo cargar el usuario a algun lado
 
         }
 
