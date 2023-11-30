@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceDataStore;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
+import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
 public class Herramientas {
@@ -42,11 +44,17 @@ public class Herramientas {
 
         SharedPreferences preferencesUser = context.getSharedPreferences("user",Context.MODE_PRIVATE);
         preferencesUser.edit().putString("user",user).apply();
+        EditTextPreference editTextPreference = new EditTextPreference(context);
+        editTextPreference.setDialogTitle(user);
+        editTextPreference.setText(user);
+        editTextPreference.setKey(user);
 
     }
 
     public static void setPreferenceUserIcon(Context context) {
         String usuario = PreferenceManager.getDefaultSharedPreferencesName(context);
+        PreferenceScreen preferenceScreen = (PreferenceScreen)
+        };
         logpy("las preferencias son "+usuario);
     }
 }

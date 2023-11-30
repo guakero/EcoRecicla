@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.util.Log;
 import android.view.Menu;
@@ -98,7 +99,9 @@ public class Home extends AppCompatActivity {
 
         }else{
             Herramientas.setPreferenceUserIcon(Home.this);
-            findViewById(R.xml.ajustes);
+            findViewById(R.id.ajustes);
+            PreferenceScreen preferenceScreen  = findViewById(R.xml.ajustes);
+
         }
 
     }
