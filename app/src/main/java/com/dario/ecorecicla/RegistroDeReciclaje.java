@@ -6,9 +6,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +32,7 @@ import java.io.File;
 import java.util.Locale;
 
 public class RegistroDeReciclaje extends AppCompatActivity {
-    private Bundle bundle;
+
     private SeekBar cantidadSeekbar;
     private NumberPicker numberPickerMes;
     private NumberPicker numberPickerYear;
@@ -82,8 +85,9 @@ public class RegistroDeReciclaje extends AppCompatActivity {
         radioButtonLitros = findViewById(R.id.radioBtnLitros);
         radioButtonItems = findViewById(R.id.radioBtnItems);
 
+        SharedPreferences preferencias= PreferenceManager.getDefaultSharedPreferences(this);
+        user = preferencias.getString("user","");
 
-        String user = bundle.getString("user");
 
         numberPickerMes.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
@@ -128,9 +132,6 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 // validar selección de material
                 if (materialStr.equals("Ninguno")){
                     String alerta = "Por favor seleccione material de reciclaje";
-                    alertDialog(alerta, materialStr);
-                } else if (unidad == null){
-                    String alerta = "Por favor seleccione unidad de medida";
                     alertDialog(alerta, materialStr);
                 }
                 else{
@@ -313,11 +314,17 @@ public class RegistroDeReciclaje extends AppCompatActivity {
     }
 
     private void leerDatosGuardados (String material){
-        String nombreArchivo = "/"+"Datos"+material+".txt";
+
+        String nombreArchivo = "/"+"Datos"+material+"_"+user+".txt";
 
         File fileInput = FileManager.crearAbrirArchivo(getFilesDir(),nombreArchivo);
         String datosLeidos = FileManager.LeerArchivo(fileInput);
         System.out.println(datosLeidos);
 
+
     }
+
+
+
+
 }

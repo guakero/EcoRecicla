@@ -18,6 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.dario.ecorecicla.modelos.Herramientas;
+
 public class Home extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -76,6 +78,7 @@ public class Home extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
             int id = (item.getItemId());
+            // si espichan el boton se abre ajustes
             if(id == R.id.logOut1){
                 Intent intent = new Intent(this, Ajustes.class);
                 startActivity(intent );
@@ -85,14 +88,19 @@ public class Home extends AppCompatActivity {
             }
     }
     public void loadPreferences (){
-        SharedPreferences preferenicas= PreferenceManager.getDefaultSharedPreferences(this);
-        loginStatus = preferenicas.getBoolean("Log Out status",false);
+
+        loginStatus = Herramientas.getLoginStatus(this);
         if(!loginStatus){
+            //borra el usuario de shared preferences
+            Herramientas.editPreferences(Home.this,"",false);
             Intent intent = new Intent(this, Welcome.class);
             startActivity(intent);
-            System.out.println(loginStatus);
+
+        }else{
+            Herramientas.setPreferenceUserIcon(Home.this);
+            findViewById(R.xml.ajustes);
         }
-        System.out.println(loginStatus);
+
     }
 
     public void onRestart()

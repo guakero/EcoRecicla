@@ -42,7 +42,7 @@ public class CreateAccount extends AppCompatActivity {
             String usuarioStr = String.valueOf(editTextUsuario.getText());
             String psw = String.valueOf(editTextPsw.getText());
             String pswR = String.valueOf(editTextPsw.getText());
-            String usuarioData = nombre + ", "+ usuarioStr + ", "+ psw;
+
 
             if(nombre.equals("")||usuarioStr.equals("")||psw.equals("")||pswR.equals("") ){
                 alertDialog("Por favor llene todos los capos",usuarioStr);

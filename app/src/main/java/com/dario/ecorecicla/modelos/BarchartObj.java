@@ -28,11 +28,14 @@ public class BarchartObj {
     private File path;
     private String nombreMaterial;
 
-    public BarchartObj (int indexYear, File path, BarChart barChart, String nombreMaterial){
+    private String user;
+
+    public BarchartObj (int indexYear, File path, BarChart barChart, String nombreMaterial, String user){
         this.indexYear = indexYear;
         this.path = path;
         this.barChart = barChart;
         this.nombreMaterial = nombreMaterial;
+        this.user = user;
 
     }
 
@@ -54,7 +57,7 @@ public class BarchartObj {
 
     public void crearBarchar(){
 
-        getBarEntries();
+        getBarEntries(this.user);
 
         barDataSet = new BarDataSet(barEntriesArrayList, "Cantidad por mes");
 
@@ -157,30 +160,15 @@ public class BarchartObj {
         barChart.clear();
 
     }
-    public void clearBars (){
 
-        crearEmtyBarchar();
-        float x = 0f;
-        float cantidad = 0;
-        while (x < 12f) {
-
-            cantidad = 0;
-            // adding new entry to our array list with bar
-            // entry and passing x and y axis value to it.
-            barEntriesArrayList.add(new BarEntry(x, cantidad));
-            x += 1f;
-        }
-
-    }
-
-    private void getBarEntries() {
+    private void getBarEntries(String user) {
 
         // se crea el array para los datos de la grafica
         barEntriesArrayList = new ArrayList<>();
         // si no hay años en yearsClasList
         if (yearsClasList.isEmpty()){
             List<String> yearsList = new ArrayList<>();
-            String nombreArchivo = "/" + nombreMaterial + ".txt";
+            String nombreArchivo = "/" + nombreMaterial +"_"+user+".txt";
             // si el archivo existe
             // leemos los datos y los partimos por dada mes usando el reg ex "\n "
             if( FileManager.VerificarExistenciaArchivo(path,nombreArchivo)){

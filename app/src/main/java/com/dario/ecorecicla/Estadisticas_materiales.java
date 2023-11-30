@@ -10,6 +10,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.dario.ecorecicla.modelos.BarchartObj;
+import com.dario.ecorecicla.modelos.Herramientas;
 import com.github.mikephil.charting.charts.BarChart;
 
 public class Estadisticas_materiales extends AppCompatActivity {
@@ -92,8 +93,9 @@ public class Estadisticas_materiales extends AppCompatActivity {
         barChart = findViewById(R.id.estadisticaOrganicos);
         barChart2 = findViewById(R.id.estadistica2);
         // si invoca la funcio para crear la grafica
-        BarchartObj grafico1 = new BarchartObj(indexYear, getFilesDir(),barChart,nombreMaterial);
-        BarchartObj grafico2 = new BarchartObj(indexYear,getFilesDir(),barChart2,nombreMaterial2);
+        // con herramientas getshareduser traemos el usuario almacenado en sharedpreferences
+        BarchartObj grafico1 = new BarchartObj(indexYear, getFilesDir(),barChart,nombreMaterial, Herramientas.getSharedUser(this));
+        BarchartObj grafico2 = new BarchartObj(indexYear,getFilesDir(),barChart2,nombreMaterial2, Herramientas.getSharedUser(this));
 
         grafico1.crearBarchar();
         grafico2.crearBarchar();
@@ -144,6 +146,7 @@ public class Estadisticas_materiales extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
 
