@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dario.ecorecicla.modelos.FileManager;
+import com.dario.ecorecicla.modelos.User;
 import com.shawnlin.numberpicker.NumberPicker;
 
 import com.dario.ecorecicla.modelos.Materiales;
@@ -28,7 +29,7 @@ import java.io.File;
 import java.util.Locale;
 
 public class RegistroDeReciclaje extends AppCompatActivity {
-
+    private Bundle bundle;
     private SeekBar cantidadSeekbar;
     private NumberPicker numberPickerMes;
     private NumberPicker numberPickerYear;
@@ -53,6 +54,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
     private RadioButton radioButtonKilos;
     private RadioButton radioButtonLitros;
     private RadioButton radioButtonItems;
+    private String user;
 
 
     @Override
@@ -81,7 +83,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
         radioButtonItems = findViewById(R.id.radioBtnItems);
 
 
-
+        String user = bundle.getString("user");
 
         numberPickerMes.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
@@ -250,7 +252,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
     private void guardarDatos(String materialStr, int mes, int year, int cantidad) {
         String alerta = "";
         // creamos objeto material con el tipo seleccionado
-        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad);
+        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad, user);
         // guardamos datos y obtenemos el status de guardado
         String savestatus = Materiales.guardarDatos(getFilesDir(), material);
         // printiamos resultado
@@ -288,7 +290,7 @@ public class RegistroDeReciclaje extends AppCompatActivity {
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Acción al presionar el botón Aceptar
-                        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad);
+                        Materiales material = new Materiales(materialStr, mes, year,cantidad, unidad, user);
                         // guardamos datos y obtenemos el status de guardado
                         Materiales.sobrescribirDatos(getFilesDir(), material);
                         leerDatosGuardados(materialStr);

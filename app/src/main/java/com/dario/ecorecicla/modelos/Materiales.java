@@ -14,17 +14,27 @@ public class Materiales {
 
     private String material;
     private String unidad;
+    private String nombre;
     private int mes;
     private int year;
     private int cantidad;
 
 
-    public Materiales (String material, int mes, int year, int cantidad, String unidad){
+    public Materiales (String material, int mes, int year, int cantidad, String unidad, String nombre){
         this.material = material;
         this.mes = mes;
         this.year = year;
         this.cantidad = cantidad;
         this.unidad = unidad;
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getMaterial() {
@@ -72,6 +82,7 @@ public class Materiales {
         String material = materiales.getMaterial();
         int mes = materiales.getMes();
         int year = materiales.getYear();
+        String nombre = materiales.getNombre();
         String unidad = materiales.getUnidad();
         File fileInput;
 
@@ -80,7 +91,7 @@ public class Materiales {
         String saveStatus = "";
         String datosLeidos = "";
         // construimos nombre archivo
-        String nombreArchivo = "/"+ material + ".txt";
+        String nombreArchivo = "/"+ material +"_"+nombre+".txt";
                 // abrimos archivo
                 fileInput = FileManager.crearAbrirArchivo(file,nombreArchivo);
                 // leemos datos
@@ -113,12 +124,12 @@ public class Materiales {
         String datosLeidos = "";
         String newdata;
         String saveStatus = "";
-
+        String nombre = materiales.getNombre();
         String data = material + ", " + mes + ", " + year + ", "+materialesObtenidos+", "+unidad;
         String materialMesYear = material+ ", "+mes + ", " + year;
 
         // construimos el nombre del archivo
-        String nombreArchivo = "/"+ material + ".txt";
+        String nombreArchivo = "/"+"_"+nombre+".txt";
         // abrimos el archivo
         fileInput = FileManager.crearAbrirArchivo(file,nombreArchivo);
         // mandamos a sobre escribir

@@ -13,13 +13,14 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/eco_recicla_completo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EcoRecicla"
+        android:theme="@style/Theme.Material3.Light.NoActionBar"
         tools:targetApi="31"
         >
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
+            android:forceDarkAllowed="false"
 
             >
             <intent-filter>

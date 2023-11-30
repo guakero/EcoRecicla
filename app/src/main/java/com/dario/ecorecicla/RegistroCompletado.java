@@ -13,6 +13,7 @@ public class RegistroCompletado extends AppCompatActivity {
 
     public boolean loginStatus;
     public Button btnHome;
+    private Bundle bundle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +26,14 @@ public class RegistroCompletado extends AppCompatActivity {
         SharedPreferences.Editor editor = preferencias.edit();
 
         btnHome = findViewById(R.id.btnHome);
-
+        String user = bundle.getString("user");
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 editor.putBoolean("Log Out status", true);
+                editor.putString("user",user);
                 editor.apply();
+
                 Intent intent = new Intent(RegistroCompletado.this, Home.class);
                 startActivity(intent);
                 finish();

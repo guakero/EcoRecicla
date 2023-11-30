@@ -45,18 +45,18 @@ public class CreateAccount extends AppCompatActivity {
             String usuarioData = nombre + ", "+ usuarioStr + ", "+ psw;
 
             if(nombre.equals("")||usuarioStr.equals("")||psw.equals("")||pswR.equals("") ){
-                alertDialog("Por favor llene todos los capos");
+                alertDialog("Por favor llene todos los capos",usuarioStr);
             } else if (!checkTerminos.isChecked()) {
-                alertDialog("Por favor acepte los terminos");
+                alertDialog("Por favor acepte los terminos",usuarioStr);
             } else if (!psw.equals(pswR)) {
-                alertDialog("Las contraseñas introducidas no coinciden");
+                alertDialog("Las contraseñas introducidas no coinciden",usuarioStr);
             } else{
                 User usuario = new User(nombre,usuarioStr,psw);
                 if (usuario.guardarUsuario(usuario,getFilesDir())){
-                    alertDialog("El usuario "+ usuarioStr +"a sido creado con exito");
+                    alertDialog("El usuario "+ usuarioStr +"a sido creado con exito",usuarioStr);
                     usuarioCreado = true;
                 }else {
-                    alertDialog("El usuario ya existe");
+                    alertDialog("El usuario ya existe",usuarioStr);
                 }
 
             }
@@ -66,7 +66,7 @@ public class CreateAccount extends AppCompatActivity {
 
     }
 
-    private void alertDialog (String alerta) {
+    private void alertDialog (String alerta, String usuarioStr) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setMessage(alerta)
@@ -75,7 +75,7 @@ public class CreateAccount extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         // Acción al presionar el botón Aceptar
                         if(usuarioCreado ){
-                            startActivity(new Intent(CreateAccount.this, RegistroCompletado.class));
+                            startActivity(new Intent(CreateAccount.this, RegistroCompletado.class).putExtra("user",usuarioStr));
                             finish();
                         }
                         dialog.cancel();
