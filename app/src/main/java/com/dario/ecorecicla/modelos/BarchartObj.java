@@ -84,34 +84,6 @@ public class BarchartObj {
         legend.setFormSize(10f);
     }
 
-    public void crearEmtyBarchar(){
-
-
-        barDataSet = new BarDataSet(barEntriesArrayList, "Cantidad por mes");
-
-        // creating a new bar data and
-        // passing our bar data set.
-        barData = new BarData(barDataSet);
-
-        // below line is to set data
-        // to our bar chart.
-        barChart.setData(barData);
-
-        // adding color to our bar data set.
-        barDataSet.setColors(ColorTemplate.getHoloBlue());
-
-        // setting text color.
-        barDataSet.setValueTextColor(Color.BLACK);
-
-        // setting text size
-        barDataSet.setValueTextSize(15f);
-
-        barChart.getDescription().setEnabled(false);
-
-        Legend legend = barChart.getLegend();
-        legend.setFormSize(10f);
-    }
-
     private void printarBarras(List<YearClass> yearsClasList) {
 
         barEntriesArrayList.clear();

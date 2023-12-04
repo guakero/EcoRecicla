@@ -18,7 +18,6 @@ import com.dario.ecorecicla.modelos.Herramientas;
 
 public class Login extends AppCompatActivity {
     public Button iniciarSesionBtn;
-    public boolean loginStatus;
     public EditText editTextNombreLogin;
     public EditText editTextPswLogin;
 

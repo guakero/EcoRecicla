@@ -151,9 +151,6 @@ public  class FileManager {
 
     }
 
-    public static void logPy(String mensaje) {
-        Log.i("Puki", mensaje);
-    }
 
     /**
      *recive el paht con getFilesDir() en el parametro File archivo, el nombre del archivo en el parametro
