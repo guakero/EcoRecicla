@@ -2,10 +2,14 @@ package com.dario.ecorecicla;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.animation.AnimatorSet;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,6 +32,8 @@ public class Consejos extends AppCompatActivity implements View.OnClickListener{
     public TextView textViewConsejos;
     public TextView textViewTituloConsejos;
     public ImageView imageViewConsejos;
+    public CardView cardView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +59,9 @@ public class Consejos extends AppCompatActivity implements View.OnClickListener{
         textViewConsejos= findViewById(R.id.textViewConsejos);
         textViewTituloConsejos = findViewById(R.id.tituloConsejos);
         imageViewConsejos = findViewById(R.id.imgViewConsejos);
+
+        cardView = findViewById(R.id.carViewConsejos);
+
 
 
     }
@@ -80,6 +89,26 @@ public class Consejos extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void imprimirConsejo(int resourceId, int drawableId,String tituloConsejo) {
+        Animation anim1 = AnimationUtils.loadAnimation(this, R.anim.anim1);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.anim);
+        cardView.setAnimation(anim1);
+
+        cardView.setLayoutAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
         textViewTituloConsejos.setText(tituloConsejo);
         imageViewConsejos.setImageResource(drawableId);
         Resources resources = getApplicationContext().getResources();
