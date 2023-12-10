@@ -96,10 +96,11 @@ public class Home extends AppCompatActivity {
             Herramientas.editPreferences(Home.this,"",false);
             Intent intent = new Intent(this, Welcome.class);
             startActivity(intent);
+            finish();
 
         }else{
             Herramientas.setPreferenceUserIcon(Home.this);
-            // aca quiero ver si puedo cargar el usuario a algun lado
+            // aca quiero ver si puedo cargar el usuario a algun lado£
 
         }
 

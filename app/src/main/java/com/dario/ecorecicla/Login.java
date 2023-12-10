@@ -18,7 +18,6 @@ import com.dario.ecorecicla.modelos.Herramientas;
 
 public class Login extends AppCompatActivity {
     public Button iniciarSesionBtn;
-    public boolean loginStatus;
     public EditText editTextNombreLogin;
     public EditText editTextPswLogin;
 
@@ -44,7 +43,8 @@ public class Login extends AppCompatActivity {
                         // cambiamos el loginStatus y el user en shared preferences
                         Herramientas.editPreferences(Login.this,usuarioInput,true);
 
-                        startActivity(new Intent(Login.this, Home.class));
+                        startActivity(new Intent(Login.this, Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+
                         finish();
                     }else{
                         alertDialog("el pasword es incorrecto");

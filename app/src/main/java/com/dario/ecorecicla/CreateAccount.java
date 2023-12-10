@@ -74,8 +74,8 @@ public class CreateAccount extends AppCompatActivity {
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Acción al presionar el botón Aceptar
-                        if(usuarioCreado ){
-                            startActivity(new Intent(CreateAccount.this, RegistroCompletado.class).putExtra("user",usuarioStr));
+                        if(usuarioCreado){
+                            startActivity(new Intent(CreateAccount.this, RegistroCompletado.class).putExtra("user",usuarioStr).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                             finish();
                         }
                         dialog.cancel();

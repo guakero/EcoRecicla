@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
-    android:background="@color/verdeFondo"
-    android:backgroundTint="@color/verdeFondo"
+
+
     >
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondo_ecorcicla1_03"
+        android:background="@drawable/fondo_03"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
     <ImageView
         android:layout_width="137dp"
@@ -27,33 +29,56 @@
         android:layout_marginTop="93dp"
         />
 
-    <EditText
-        android:id="@+id/usuarioLogin"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:inputType="text"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
         android:hint="Usuario"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="370dp"
-        android:textColor="@color/black"
-        android:textColorHint="#A6002107"
-        android:backgroundTint="@color/verdeFuente2"/>
+        app:boxBackgroundColor="@null"
 
-    <EditText
-        android:id="@+id/pswLogin"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:inputType="textPassword"
-        android:hint="Contraseña"
+        app:endIconMode="clear_text"
+        app:startIconDrawable="@drawable/baseline_user"
+        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+        android:layout_marginTop="350dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="450dp"
-        android:textColor="@color/black"
-        android:textColorHint="#A6002107"
-        android:backgroundTint="@color/verdeFuente2"/>
+        >
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/usuarioLogin"
+        android:backgroundTint="@android:color/transparent"
+        app:boxBackgroundColor="@null"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        app:endIconMode="password_toggle"
+
+        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+        android:layout_marginTop="430dp"
+        app:startIconDrawable="@drawable/baseline_password_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pswLogin"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
+            android:textAlignment="center"
+            android:inputType="textPassword"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnIniciarSesion"
