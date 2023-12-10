@@ -8,5 +8,6 @@
     <color name="verdeFuentes">#002107</color>
     <color name="verdeFuente2">#002107</color>
     <color name="rojo">#F44336</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

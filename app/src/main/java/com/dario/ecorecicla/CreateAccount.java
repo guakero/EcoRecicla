@@ -75,7 +75,7 @@ public class CreateAccount extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         // Acción al presionar el botón Aceptar
                         if(usuarioCreado){
-                            startActivity(new Intent(CreateAccount.this, RegistroCompletado.class).putExtra("user",usuarioStr));
+                            startActivity(new Intent(CreateAccount.this, RegistroCompletado.class).putExtra("user",usuarioStr).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                             finish();
                         }
                         dialog.cancel();

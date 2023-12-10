@@ -35,7 +35,7 @@ public class RegistroCompletado extends AppCompatActivity {
             public void onClick(View v) {
                 Herramientas.editPreferences(RegistroCompletado.this ,user,true);
 
-                 Intent intent = new Intent(RegistroCompletado.this, Home.class);
+                 Intent intent = new Intent(RegistroCompletado.this, Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
             }

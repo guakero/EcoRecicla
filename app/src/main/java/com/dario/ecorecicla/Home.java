@@ -96,6 +96,7 @@ public class Home extends AppCompatActivity {
             Herramientas.editPreferences(Home.this,"",false);
             Intent intent = new Intent(this, Welcome.class);
             startActivity(intent);
+            finish();
 
         }else{
             Herramientas.setPreferenceUserIcon(Home.this);
