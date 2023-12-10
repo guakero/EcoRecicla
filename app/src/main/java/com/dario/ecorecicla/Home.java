@@ -100,7 +100,7 @@ public class Home extends AppCompatActivity {
 
         }else{
             Herramientas.setPreferenceUserIcon(Home.this);
-            // aca quiero ver si puedo cargar el usuario a algun lado
+            // aca quiero ver si puedo cargar el usuario a algun lado£
 
         }
 
